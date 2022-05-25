@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  margin-top: 0;
+  padding-top: 20px;
+}
