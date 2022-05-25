@@ -1,12 +1,20 @@
-import { AgentAvatar, AgentItemArea, AgentItemText, AgentMainArea, AgentName, AgentOptions, AgentStatus, AgentStatusText, Container } from "./styles";
+import {
+  AgentAvatar,
+  AgentItemArea,
+  AgentItemText,
+  AgentMainArea,
+  AgentName,
+  AgentOptions,
+  AgentStatus,
+  AgentStatusText,
+  Container,
+} from "./styles";
 
 export const CollaboratorCard = () => {
   return (
     <Container>
       <AgentMainArea>
-        <AgentAvatar
-          src="https://github.com/leonmolina.png"
-        />
+        <AgentAvatar src="https://github.com/leonmolina.png" />
         <AgentName>Leon Molina Aguiar</AgentName>
       </AgentMainArea>
       {/* Departamento */}
@@ -25,7 +33,10 @@ export const CollaboratorCard = () => {
       <AgentStatus>
         <AgentStatusText>Ativo</AgentStatusText>
       </AgentStatus>
-      <AgentOptions>...</AgentOptions>
+      {/* Opções */}
+      <AgentItemArea>
+        <AgentOptions>...</AgentOptions>
+      </AgentItemArea>
     </Container>
   );
-}
+};
