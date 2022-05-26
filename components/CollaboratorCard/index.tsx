@@ -1,3 +1,4 @@
+import { Agents } from "../Collaborators";
 import {
   AgentAvatar,
   AgentItemArea,
