@@ -11,28 +11,32 @@ import {
   Container,
 } from "./styles";
 
-export const CollaboratorCard = () => {
+type Props = {
+  agents: Agents
+}
+
+export const CollaboratorCard = ({agents}: Props) => {
   return (
     <Container>
       <AgentMainArea>
-        <AgentAvatar src="https://github.com/leonmolina.png" />
-        <AgentName>Leon Molina Aguiar</AgentName>
+        {/* <AgentAvatar src="https://github.com/leonmolina.png" /> */}
+        <AgentName>{agents.name}</AgentName>
       </AgentMainArea>
       {/* Departamento */}
       <AgentItemArea>
-        <AgentItemText>Administrativo</AgentItemText>
+        <AgentItemText>{agents.department}</AgentItemText>
       </AgentItemArea>
       {/* Cargo */}
       <AgentItemArea>
-        <AgentItemText>Diretor</AgentItemText>
+        <AgentItemText>{agents.role}</AgentItemText>
       </AgentItemArea>
       {/* Unidade */}
       <AgentItemArea>
-        <AgentItemText>Quartel General</AgentItemText>
+        <AgentItemText>{agents.branch}</AgentItemText>
       </AgentItemArea>
       {/* Status */}
       <AgentStatus>
-        <AgentStatusText>Ativo</AgentStatusText>
+        <AgentStatusText>{agents.status}</AgentStatusText>
       </AgentStatus>
       {/* Opções */}
       <AgentItemArea>
