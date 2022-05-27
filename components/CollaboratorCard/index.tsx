@@ -5,7 +5,6 @@ import {
   AgentItems,
   AgentItemText,
   AgentMainArea,
-  AgentName,
   AgentOptions,
   AgentStatus,
   AgentStatusText,
@@ -20,9 +19,9 @@ export const CollaboratorCard = ({ agents }: Props) => {
   return (
       <Container>
         <AgentItems className="row">
-          <AgentMainArea className="col">
+          <AgentMainArea>
             <AgentAvatar src={agents.image} />
-            <AgentName>{agents.name}</AgentName>
+            <AgentItemText>{agents.name}</AgentItemText>
           </AgentMainArea>
 
           {/* Departamento */}
@@ -48,7 +47,7 @@ export const CollaboratorCard = ({ agents }: Props) => {
           </AgentItemArea>
 
           {/* Opções */}
-          <AgentItemArea className="col">
+          <AgentItemArea className="more col">
             <AgentOptions>...</AgentOptions>
           </AgentItemArea>
         </AgentItems>

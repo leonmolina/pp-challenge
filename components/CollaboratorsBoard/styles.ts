@@ -25,10 +25,14 @@ export const HeaderItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  &.name{
+    width: 180px;
+  }
 `
 export const HeaderItemTitle = styled.span`
+  font-family: Roboto;
+  font-weight: bold;
 `
 export const ListContent = styled.div`
   width: 100%;
-  height: 500px;
 `;

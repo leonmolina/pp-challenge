@@ -17,15 +17,14 @@ export const AgentAvatar = styled.img`
   width: 30px;
   height: 30px;
   border-radius: 15px;
-`
-export const AgentName = styled.span`
+  margin-right: 5px;
 `
 export const AgentMainArea = styled.div`
   border: 1px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 180px;
 `
 export const AgentItemArea = styled.div`
   border: 1px solid #000;
@@ -38,6 +37,8 @@ export const AgentItemArea = styled.div`
   }
 `
 export const AgentItemText = styled.span`
+  font-family: Roboto;
+  font-size: 14px;
 `
 export const AgentStatus = styled.div`
 `

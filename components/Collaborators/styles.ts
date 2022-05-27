@@ -15,7 +15,6 @@ export const ListArea = styled.div`
   width: 100%;
 `;
 export const ListContent = styled.div`
-  height: 500px;
   width: 100%;
   background-color: #EEE;
 `;

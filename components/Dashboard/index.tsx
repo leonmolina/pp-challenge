@@ -6,7 +6,7 @@ import { Container } from "./styles";
 export const Dashboard = () => {
   const [tabSelected, setTabSelected] = useState(true);
   return (
-    <Container className="container">
+    <Container>
       <h3>Colaboradores | Cargos</h3>
       {tabSelected
         ?
