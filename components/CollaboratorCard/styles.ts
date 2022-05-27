@@ -20,15 +20,11 @@ export const AgentAvatar = styled.img`
   margin-right: 5px;
 `
 export const AgentMainArea = styled.div`
-  border: 1px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
 `
 export const AgentItemArea = styled.div`
-  border: 1px solid #000;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

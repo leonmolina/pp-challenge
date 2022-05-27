@@ -20,14 +20,10 @@ export const ListHeader = styled.div`
   border-radius: 10px 10px 0 0;
 `;
 export const HeaderItem = styled.div`
-  border: 1px solid #000;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  &.name{
-    width: 180px;
-  }
 `
 export const HeaderItemTitle = styled.span`
   font-family: Roboto;
