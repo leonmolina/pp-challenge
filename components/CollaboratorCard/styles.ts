@@ -10,12 +10,17 @@ export const Container = styled.div`
 `
 export const AgentMainArea = styled.div`
   width: 220px;
+  display: flex;
+  align-items: center;
 `
 export const AgentItems = styled.div`
   width: 100%;
   display: flex;
 `
 export const AgentAvatar = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
 `
 export const AgentName = styled.span`
 `
