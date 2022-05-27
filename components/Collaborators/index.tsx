@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
-import { CollaboratorCard } from "../CollaboratorCard";
+import { useState } from "react";
+import { CollaboratorsBoard } from "../CollaboratorsBoard";
 import {
   Container,
   ListArea,
@@ -8,7 +7,6 @@ import {
   ListFooter,
   ListFooterLeftSide,
   ListFooterRightSide,
-  ListHeader,
   ListTitle,
   SearchInput,
 } from "./styles";
@@ -49,16 +47,6 @@ export interface Agents {
 
 export const Collaborators = () => {
   const [search, setSearch] = useState("");
-  const [agent, setAgent] = useState({});
-  const [agents, setAgents] = useState<Agents[]>([]);
-
-  useEffect(() => {
-    const getAgents = async () => {
-      const res = await api.get("/agents")
-      setAgents(res.data.items)
-    }
-    getAgents();
-  }, []);
 
   return (
     <Container>
@@ -70,22 +58,9 @@ export const Collaborators = () => {
       />
       <ListTitle>Listagem de colaboradores</ListTitle>
       <ListArea>
-        <ListHeader>
-          <span>Nome completo</span>
-          <span>Departamento</span>
-          <span>Cargo</span>
-          <span>Unidade</span>
-          <span>Status</span>
-        </ListHeader>
 
         <ListContent>
-          {
-          agents?.map((i, k) => (
-            <div key={k}>
-              <CollaboratorCard agents={i} />
-            </div>
-          ))
-          }
+          <CollaboratorsBoard />
         </ListContent>
 
         <ListFooter>
