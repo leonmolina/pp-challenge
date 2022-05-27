@@ -15,6 +15,7 @@ export const AgentMainArea = styled.div`
 `
 export const AgentItems = styled.div`
   width: 100%;
+  height: inherit;
   display: flex;
 `
 export const AgentAvatar = styled.img`
