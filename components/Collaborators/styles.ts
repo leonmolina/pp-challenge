@@ -23,8 +23,9 @@ export const ListHeader = styled.div`
   border-radius: 10px 10px 0 0;
 `;
 export const ListContent = styled.div`
-  height: 100px;
-  background-color: #f00;
+  height: 500px;
+  background-color: #EEE;
+  overflow: hidden;
 `;
 export const ListFooter = styled.div`
   display: flex;

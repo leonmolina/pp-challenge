@@ -79,13 +79,6 @@ export const Collaborators = () => {
         </ListHeader>
 
         <ListContent>
-          {/* {
-          agents?.map((i, k) => (
-            <div key={k}>
-              <span>{i.name}</span>
-            </div>
-          ))
-          } */}
           {
           agents?.map((i, k) => (
             <div key={k}>
