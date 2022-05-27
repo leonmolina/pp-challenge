@@ -20,9 +20,9 @@ export const CollaboratorCard = ({ agents }: Props) => {
   return (
     <Container>
       <AgentMainArea>
-        {/* <AgentAvatar src="https://github.com/leonmolina.png" /> */}
+        <AgentAvatar src={agents.image} />
         <AgentName>{agents.name}</AgentName>
-      </AgentMainArea>
+      </AgentMainArea> 
       <AgentItems>
         {/* Departamento */}
         <AgentItemArea>
