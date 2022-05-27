@@ -20,7 +20,6 @@ export const CollaboratorCard = ({ agents }: Props) => {
   return (
     <Container>
       <AgentMainArea>
-        <button className="btn btn-primary">Button</button>
         <AgentAvatar src={agents.image} />
         <AgentName>{agents.name}</AgentName>
       </AgentMainArea> 
