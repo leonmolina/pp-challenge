@@ -18,38 +18,37 @@ type Props = {
 
 export const CollaboratorCard = ({ agents }: Props) => {
   return (
-      <Container className="container">
-
+      <Container>
         <AgentItems className="row">
-          <AgentMainArea className="col-2 col-sm">
+          <AgentMainArea className="col">
             <AgentAvatar src={agents.image} />
             <AgentName>{agents.name}</AgentName>
           </AgentMainArea>
 
           {/* Departamento */}
-          <AgentItemArea className="col-2 col-sm">
+          <AgentItemArea className="col">
             <AgentItemText>{agents.department}</AgentItemText>
           </AgentItemArea>
 
           {/* Cargo */}
-          <AgentItemArea className="col-2 col-sm">
+          <AgentItemArea className="col">
             <AgentItemText>{agents.role}</AgentItemText>
           </AgentItemArea>
 
           {/* Unidade */}
-          <AgentItemArea className="col- col-sm">
+          <AgentItemArea className="col">
             <AgentItemText>{agents.branch}</AgentItemText>
           </AgentItemArea>
 
           {/* Status */}
-          <AgentItemArea className="col- col-sm">
+          <AgentItemArea className="col">
             <AgentStatus>
               <AgentStatusText>{agents.status}</AgentStatusText>
             </AgentStatus>
           </AgentItemArea>
 
           {/* Opções */}
-          <AgentItemArea className="col- col-sm">
+          <AgentItemArea className="col">
             <AgentOptions>...</AgentOptions>
           </AgentItemArea>
         </AgentItems>

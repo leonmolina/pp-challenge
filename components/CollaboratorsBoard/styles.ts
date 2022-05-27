@@ -1,21 +1,34 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  height: 500px;
+  height: auto;
+  width: 100%;
   overflow: hidden;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ListHeader = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  height: 50px;
+  height: 60px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 10px 10px 0 0;
 `;
+export const HeaderItem = styled.div`
+  border: 1px solid #000;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+export const HeaderItemTitle = styled.span`
+`
 export const ListContent = styled.div`
+  width: 100%;
   height: 500px;
-  overflow: hidden;
 `;

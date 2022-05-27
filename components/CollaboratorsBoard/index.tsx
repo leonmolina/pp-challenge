@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { CollaboratorCard } from "../CollaboratorCard";
 import { Agents } from "../Collaborators";
-import { Container, ListContent, ListHeader } from "./styles";
+import { Container, HeaderItem, HeaderItemTitle, ListContent, ListHeader } from "./styles";
 
 export const CollaboratorsBoard = () => {
 
@@ -19,12 +19,22 @@ export const CollaboratorsBoard = () => {
 
   return (
     <Container>
-      <ListHeader>
-        <span>Nome completo</span>
-        <span>Departamento</span>
-        <span>Cargo</span>
-        <span>Unidade</span>
-        <span>Status</span>
+      <ListHeader className="row">
+        <HeaderItem className="col-2 col-sm">
+          <HeaderItemTitle>Nome Completo</HeaderItemTitle>
+        </HeaderItem>
+        <HeaderItem className="col-2 col-sm">
+          <HeaderItemTitle>Departamento</HeaderItemTitle>
+        </HeaderItem>
+        <HeaderItem className="col-2 col-sm">
+          <HeaderItemTitle>Cargo</HeaderItemTitle>
+        </HeaderItem>
+        <HeaderItem className="col-2 col-sm">
+          <HeaderItemTitle>Unidade</HeaderItemTitle>
+        </HeaderItem>
+        <HeaderItem className="col-2 col-sm">
+          <HeaderItemTitle>Status</HeaderItemTitle>
+        </HeaderItem>
       </ListHeader>
 
       <ListContent>
