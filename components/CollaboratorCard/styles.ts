@@ -7,7 +7,7 @@ export const Container = styled.div`
   height:  60px;
   width: 100%;
   border-bottom: 1px solid #CCC;
-`
+ `;
 export const AgentMainArea = styled.div`
   width: 220px;
   display: flex;

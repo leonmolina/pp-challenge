@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   height: 500px;
   overflow: hidden;
+  background-color: #fff;
 `;
 
 export const ListHeader = styled.div`
@@ -16,6 +17,5 @@ export const ListHeader = styled.div`
 `;
 export const ListContent = styled.div`
   height: 500px;
-  background-color: #eee;
   overflow: hidden;
 `;

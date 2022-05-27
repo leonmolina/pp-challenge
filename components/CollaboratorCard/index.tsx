@@ -18,35 +18,41 @@ type Props = {
 
 export const CollaboratorCard = ({ agents }: Props) => {
   return (
-    <Container>
-      <AgentMainArea>
-        <AgentAvatar src={agents.image} />
-        <AgentName>{agents.name}</AgentName>
-      </AgentMainArea> 
-      <AgentItems>
-        {/* Departamento */}
-        <AgentItemArea>
-          <AgentItemText>{agents.department}</AgentItemText>
-        </AgentItemArea>
-        {/* Cargo */}
-        <AgentItemArea>
-          <AgentItemText>{agents.role}</AgentItemText>
-        </AgentItemArea>
-        {/* Unidade */}
-        <AgentItemArea>
-          <AgentItemText>{agents.branch}</AgentItemText>
-        </AgentItemArea>
-        {/* Status */}
-        <AgentItemArea>
-          <AgentStatus>
-            <AgentStatusText>{agents.status}</AgentStatusText>
-          </AgentStatus>
-        </AgentItemArea>
-        {/* Opções */}
-        <AgentItemArea>
-          <AgentOptions>...</AgentOptions>
-        </AgentItemArea>
-      </AgentItems>
-    </Container>
+      <Container className="container">
+
+        <AgentItems className="row">
+          <AgentMainArea className="col-2 col-sm">
+            <AgentAvatar src={agents.image} />
+            <AgentName>{agents.name}</AgentName>
+          </AgentMainArea>
+
+          {/* Departamento */}
+          <AgentItemArea className="col-2 col-sm">
+            <AgentItemText>{agents.department}</AgentItemText>
+          </AgentItemArea>
+
+          {/* Cargo */}
+          <AgentItemArea className="col-2 col-sm">
+            <AgentItemText>{agents.role}</AgentItemText>
+          </AgentItemArea>
+
+          {/* Unidade */}
+          <AgentItemArea className="col- col-sm">
+            <AgentItemText>{agents.branch}</AgentItemText>
+          </AgentItemArea>
+
+          {/* Status */}
+          <AgentItemArea className="col- col-sm">
+            <AgentStatus>
+              <AgentStatusText>{agents.status}</AgentStatusText>
+            </AgentStatus>
+          </AgentItemArea>
+
+          {/* Opções */}
+          <AgentItemArea className="col- col-sm">
+            <AgentOptions>...</AgentOptions>
+          </AgentItemArea>
+        </AgentItems>
+      </Container>
   );
 };
