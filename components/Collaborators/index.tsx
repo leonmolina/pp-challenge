@@ -55,7 +55,7 @@ export const Collaborators = () => {
   useEffect(() => {
     const getAgents = async () => {
       const res = await api.get("/agents")
-      setAgents(res.data)
+      setAgents(res.data.items)
     }
     getAgents();
   }, []);
@@ -79,13 +79,13 @@ export const Collaborators = () => {
         </ListHeader>
 
         <ListContent>
-          {/* {
+          {
           agents?.map((i, k) => (
             <div key={k}>
-              <CollaboratorCard data={i} />
+              <span>{i.name}</span>
             </div>
           ))
-          } */}
+          }
         </ListContent>
 
         <ListFooter>
