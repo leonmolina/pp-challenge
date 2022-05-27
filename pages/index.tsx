@@ -11,7 +11,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Organization dashboard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Main>
+      <Main className="container-fluid">
         <LeftSide />
         <RightSide>
           <ContentArea>

@@ -1,18 +1,17 @@
 import styled from '@emotion/styled';
 
 export const Main = styled.main`
-  width: 100vw;
   height: 100vh;
   display: flex;
+  padding: 0;
 `
 export const LeftSide = styled.div`
   width: 256px;
   height: 100%;
-  background-color: #fff;
+  background-color: #ccc;
 `
 export const RightSide = styled.div`
   width: 100%;
-  height: 100%;
   background-color: #f8faf9;
   display: flex;
   flex-direction: column;
