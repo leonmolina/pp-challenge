@@ -24,6 +24,9 @@ export const HeaderItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  &.main {
+    justify-content: flex-start;
+  }
 `
 export const HeaderItemTitle = styled.span`
   font-family: Roboto;

@@ -20,7 +20,7 @@ export const CollaboratorsBoard = () => {
   return (
     <Container>
       <ListHeader className="row">
-        <HeaderItem className="col-3">
+        <HeaderItem className="main col-3">
           <HeaderItemTitle>Nome Completo</HeaderItemTitle>
         </HeaderItem>
         <HeaderItem className="col-2">

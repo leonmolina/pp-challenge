@@ -29,7 +29,7 @@ export const MainAreaLeftSide = styled.div`
   width: 30%;
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `;
 export const MainAreaRightSide = styled.div`
