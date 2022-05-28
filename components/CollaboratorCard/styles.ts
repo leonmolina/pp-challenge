@@ -53,4 +53,8 @@ export const AgentItemText = styled.span`
 `;
 export const AgentStatus = styled.div``;
 export const AgentStatusText = styled.span``;
-export const AgentOptions = styled.div``;
+export const AgentOptions = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

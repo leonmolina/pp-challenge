@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ArrowLeft, DotsThreeVertical } from "phosphor-react";
 import { Agents } from "../Collaborators";
 import { Status } from "../partials/Status";
 import {
@@ -18,7 +18,6 @@ import {
 type Props = {
   agents: Agents;
 };
-
 
 export const CollaboratorCard = ({ agents }: Props) => {
   return (
@@ -57,7 +56,9 @@ export const CollaboratorCard = ({ agents }: Props) => {
 
         {/* Opções */}
         <AgentItemArea className="more col-1">
-          <AgentOptions>...</AgentOptions>
+          <AgentOptions>
+            <DotsThreeVertical size={32} />
+          </AgentOptions>
         </AgentItemArea>
       </AgentItems>
     </Container>
