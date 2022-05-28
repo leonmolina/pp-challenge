@@ -2,7 +2,10 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
 `;
-
+export const SearchLabel = styled.label`
+  font-family: var(--font);
+  font-weight: var(--medium);
+`
 export const ListTitle = styled.h3`
 `;
 export const ListArea = styled.div`

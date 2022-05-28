@@ -5,7 +5,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #EAEFED;
 `;
 export const LogoArea = styled.div`
   width: 100px;
@@ -13,7 +13,7 @@ export const LogoArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #EAEFED;
 `;
 export const UserArea = styled.div`
   width: 200px;
@@ -21,7 +21,7 @@ export const UserArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #EAEFED;
 `;
 export const UserAvatar = styled.div`
   width: 40px;

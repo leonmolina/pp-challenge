@@ -19,9 +19,9 @@ export const AgentItems = styled.div`
   display: flex;
 `;
 export const AgentAvatar = styled.img`
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
   margin-right: 5px;
 `;
 export const AgentMainArea = styled.div`

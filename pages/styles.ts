@@ -9,7 +9,8 @@ export const LeftSide = styled.div`
   width: 256px;
   height: 100%;
   background-color: #FFF;
-  border-right: 1px solid #ddd;
+  box-shadow: 0px 4px 8px 0px rgba(165, 171, 179, 0.16);
+  border: 1px solid #EAEFED;
  ;
 `
 export const RightSide = styled.div`
@@ -22,8 +23,11 @@ export const RightSide = styled.div`
 export const TitleArea = styled.div`
   width: 100%;
 `
-export const Title = styled.h1`
-  font-family: 'Poppins', sans-serif;
+export const Title = styled.h2`
+  font-family: var(--font);
+  font-weight: var(--bold);
+  font-size: 32px;
+  margin: 20px 0;
 `
 export const ContentArea = styled.div`
   width: 80%;

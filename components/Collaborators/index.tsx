@@ -9,6 +9,7 @@ import {
   ListFooterLeftSide,
   ListFooterRightSide,
   ListTitle,
+  SearchLabel,
 } from "./styles";
 
 interface Phone {
@@ -50,6 +51,7 @@ export const Collaborators = () => {
   return (
     <Container>
       {/* Barra de pesquisa dos Colaboradores */}
+      <SearchLabel>Pesquisar por</SearchLabel>
       <SearchBar />
 
       <ListTitle>Listagem de colaboradores</ListTitle>
