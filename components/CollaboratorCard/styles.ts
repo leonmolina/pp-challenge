@@ -1,4 +1,9 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+
+type Props = {
+  isDisabled?: boolean;
+}
 
 export const Container = styled.div`
   display: flex;
@@ -53,8 +58,40 @@ export const AgentItemText = styled.span`
 `;
 export const AgentStatus = styled.div``;
 export const AgentStatusText = styled.span``;
-export const AgentOptions = styled.div`
+export const AgentOptions = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  &:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
 `;
+export const MoreOptions = styled.ul`
+`;
+export const MoreOptionsItem = styled.li`
+`;
+export const Options = styled.a<Props>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+
+  ${({ isDisabled }) => isDisabled && css`
+    color: #CCC;
+    cursor: default;
+  &:hover {
+    background: #fff;
+    color: #ccc;
+  }
+  `};
+
+`
+export const OptionsIcon = styled.div`
+  padding-right: 10px;
+  width: 20%;
+`
+export const OptionsText = styled.div`
+  width: 80%;
+`
