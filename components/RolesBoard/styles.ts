@@ -27,7 +27,7 @@ export const HeaderItem = styled.div`
   align-items: center;
   &.main {
     justify-content: flex-start;
-  }
+  };
 `
 export const HeaderItemTitle = styled.span`
   font-family: var(--font);

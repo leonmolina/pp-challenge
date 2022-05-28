@@ -40,7 +40,7 @@ export const RoleCard = ({ roles }: Props) => {
         </AgentItemArea>
 
         {/* Opções */}
-        <AgentItemArea className="more col-1">
+        <AgentItemArea className="more col-6">
           <OptionsDropdown className="dropdown">
             <AgentOptions
               className="btn btn-sm"
@@ -52,8 +52,8 @@ export const RoleCard = ({ roles }: Props) => {
               <Image
               src={moreVertical}
               alt="Botão de mais opções"
-              width={124}
-              height={124}
+              width={24}
+              height={24}
               />
             </AgentOptions>
             {/* Dropdown items */}

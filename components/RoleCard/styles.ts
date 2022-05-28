@@ -11,7 +11,7 @@ export const Container = styled.div`
   justify-content: center;
   height: 70px;
   width: 100%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #EAEFED;
 `;
 export const AgentItems = styled.div`
   width: 100%;
