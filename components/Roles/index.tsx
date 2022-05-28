@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { CollaboratorsBoard } from "../CollaboratorsBoard";
 import { SearchBar } from "../SearchBar";
 import {
   Container,
@@ -15,6 +13,7 @@ import {
 import arrowLeft from "../../public/chevron-left.svg";
 import arrowRight from "../../public/chevron-right.svg";
 import Image from "next/image";
+import { RolesBoard } from "../RolesBoard";
 
 export const Roles = () => {
   return (
@@ -27,7 +26,7 @@ export const Roles = () => {
 
       <ListArea>
         <ListContent>
-          <CollaboratorsBoard />
+          <RolesBoard />
         </ListContent>
 
         <ListFooter>
