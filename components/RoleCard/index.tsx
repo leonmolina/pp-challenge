@@ -1,37 +1,86 @@
+import { Eye, Trash } from "phosphor-react";
 import {
+  AgentItemArea,
+  AgentItems,
+  AgentItemText,
+  AgentOptions,
   Container,
-  RoleItemArea,
-  RoleItemText,
-  RoleLeftSide,
-  RoleOptions,
-  RoleRightSide,
+  MoreOptions,
+  MoreOptionsItem,
+  Options,
+  OptionsDropdown,
+  OptionsIcon,
+  OptionsText,
 } from "./styles";
+import moreVertical from '../../public/more-vertical.svg'
+import Image from "next/image";
+import { Roles } from "../Roles";
 
-export const RoleCard = () => {
+type Props = {
+  roles: Roles;
+};
+
+export const RoleCard = ({ roles }: Props) => {
   return (
     <Container>
-      {/* Lado Esquerdo */}
-      <RoleLeftSide>
+      <AgentItems className="row">
         {/* Cargo */}
-        <RoleItemArea>
-          <RoleItemText>Supervisor</RoleItemText>
-        </RoleItemArea>
+        <AgentItemArea className="col-2">
+          <AgentItemText>{roles.name}</AgentItemText>
+        </AgentItemArea>
+
         {/* Departamento */}
-        <RoleItemArea>
-          <RoleItemText>SAC</RoleItemText>
-        </RoleItemArea>
+        <AgentItemArea className="col-2">
+          <AgentItemText>{roles.departament}</AgentItemText>
+        </AgentItemArea>
+
         {/* Colaboradores */}
-        <RoleItemArea>
-          <RoleItemText>2</RoleItemText>
-        </RoleItemArea>
-      </RoleLeftSide>
-      {/* Lado Direito */}
-      <RoleRightSide>
+        <AgentItemArea className="col-2">
+          <AgentItemText>{roles.agents_quantity}</AgentItemText>
+        </AgentItemArea>
+
         {/* Opções */}
-        <RoleItemArea>
-          <RoleOptions>...</RoleOptions>
-        </RoleItemArea>
-      </RoleRightSide>
+        <AgentItemArea className="more col-1">
+          <OptionsDropdown className="dropdown">
+            <AgentOptions
+              className="btn btn-sm"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {/* Três pontos verticais */}
+              <Image
+              src={moreVertical}
+              alt="Botão de mais opções"
+              width={124}
+              height={124}
+              />
+            </AgentOptions>
+            {/* Dropdown items */}
+            <MoreOptions
+              className="dropdown-menu"
+              aria-labelledby="dropdownMenuButton1"
+            >
+              <MoreOptionsItem>
+                <Options className="dropdown-item" href="#">
+                  <OptionsIcon>
+                    <Eye size={20} />
+                  </OptionsIcon>
+                  <OptionsText>Ver colaborador</OptionsText>
+                </Options>
+              </MoreOptionsItem>
+              <MoreOptionsItem>
+                <Options isDisabled className="dropdown-item">
+                <OptionsIcon>
+                    <Trash size={20} />
+                  </OptionsIcon>
+                  <OptionsText>Excluir</OptionsText>
+                </Options>
+              </MoreOptionsItem>
+            </MoreOptions>
+          </OptionsDropdown>
+        </AgentItemArea>
+      </AgentItems>
     </Container>
   );
 };

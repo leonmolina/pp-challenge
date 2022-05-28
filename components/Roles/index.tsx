@@ -15,6 +15,22 @@ import arrowRight from "../../public/chevron-right.svg";
 import Image from "next/image";
 import { RolesBoard } from "../RolesBoard";
 
+interface Rules {
+  role: string;
+  permissions: string[];
+}
+
+export interface Role {
+  name: string;
+  departament: string;
+  grouprules: Rules[];
+}
+export interface Roles {
+  name: string;
+  departament: string;
+  agents_quantity: number;
+}
+
 export const Roles = () => {
   return (
     <Container>

@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
-import { CollaboratorCard } from "../CollaboratorCard";
-import { Agents } from "../Collaborators";
+import { RoleCard } from "../RoleCard";
+import { Roles } from "../Roles";
 import { Container, HeaderItem, HeaderItemTitle, ListContent, ListHeader } from "./styles";
 
 export const RolesBoard = () => {
 
   const [agent, setAgent] = useState({});
-  const [agents, setAgents] = useState<Agents[]>([]);
+  const [roles, setRoles] = useState<Roles[]>([]);
 
   useEffect(() => {
-    const getAgents = async () => {
-      const res = await api.get("/agents")
-      setAgents(res.data.items)
+    const getRoles = async () => {
+      const res = await api.get("/roles")
+      setRoles(res.data.roles)
     }
-    getAgents();
+    getRoles();
   }, []);
 
   return (
@@ -35,11 +35,11 @@ export const RolesBoard = () => {
       </ListHeader>
 
       <ListContent>
-        {agents?.map((i, k) => (
+        {roles?.map((i, k) => (
           <div key={k}>
-            <CollaboratorCard agents={i} />
+            <RoleCard roles={i} />
           </div>
-        )).slice(0, 6)}
+        )).slice(0, 8)}
       </ListContent>
     </Container>
   );
