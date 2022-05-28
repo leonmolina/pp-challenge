@@ -29,8 +29,8 @@ export const HeaderItem = styled.div`
   }
 `
 export const HeaderItemTitle = styled.span`
-  font-family: Roboto;
-  font-weight: bold;
+  font-family: var(--font);
+  font-weight: var(--bold);
 `
 export const ListContent = styled.div`
   width: 100%;

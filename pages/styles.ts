@@ -24,7 +24,6 @@ export const TitleArea = styled.div`
 `
 export const Title = styled.h1`
   font-family: 'Poppins', sans-serif;
-  color: #f00;
 `
 export const ContentArea = styled.div`
   width: 80%;

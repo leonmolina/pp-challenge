@@ -1,3 +1,10 @@
+:root {
+  --font: 'Poppins';
+  --bold: 600;
+  --medium: 500;
+  --regular: 400;
+}
+
 html,
 body {
   padding: 0;

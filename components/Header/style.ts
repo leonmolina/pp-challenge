@@ -32,9 +32,10 @@ export const UserAvatar = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const AvatarText = styled.span`
-  font-family: Roboto;
-`
+export const AvatarFirstLetters = styled.span`
+  font-family: var(--font);
+  font-weight: var(--regular);
+`;
 export const UserCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,11 +43,12 @@ export const UserCard = styled.div`
 `;
 export const UserName = styled.span`
   font-size: 14px;
-  font-weight: bold;
-  font-family: Roboto;
+  font-family: var(--font);
+  font-weight: var(--bold);
 `;
 export const UserData = styled.span`
   font-size: 12px;
   color: #555;
-  font-family: Roboto;
+  font-family: var(--font);
+  font-weight: var(--regular);
 `;

@@ -53,11 +53,11 @@ export const AgentItemArea = styled.div`
   }
 `;
 export const AgentItemText = styled.span`
-  font-family: Roboto;
+  font-family: var(--font);
+  font-weight: var(--regular);
   font-size: 14px;
 `;
 export const AgentStatus = styled.div``;
-export const AgentStatusText = styled.span``;
 export const AgentOptions = styled.button`
   display: flex;
   justify-content: center;
