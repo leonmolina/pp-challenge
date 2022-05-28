@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Collaborators } from "../Collaborators";
 import { Roles } from "../Roles";
-import { Container, DashboardTabs, FillerTab, Tab, TabTitle } from "./styles";
+import { Container, DashboardContent, DashboardTabs, FillerTab, Tab, TabTitle } from "./styles";
 
 export const Dashboard = () => {
   const [tabSelected, setTabSelected] = useState(true);
@@ -16,7 +16,9 @@ export const Dashboard = () => {
         </Tab>
         <FillerTab />
       </DashboardTabs>
+      <DashboardContent>
       {tabSelected ? <Collaborators /> : <Roles />}
+      </DashboardContent>
     </Container>
   );
 };

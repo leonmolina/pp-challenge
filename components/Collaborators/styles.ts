@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 export const SearchLabel = styled.label`
   font-family: var(--font);
@@ -17,10 +20,15 @@ export const ListTitle = styled.h3`
   margin: 40px 0;
 `;
 export const ListArea = styled.div`
-  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 `;
 export const ListContent = styled.div`
   width: 100%;
+  max-height: 100%;
+  overflow: hidden;
   background-color: #EEE;
 `;
 export const ListFooter = styled.div`

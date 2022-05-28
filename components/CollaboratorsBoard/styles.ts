@@ -37,5 +37,6 @@ export const HeaderItemTitle = styled.span`
 `
 export const ListContent = styled.div`
   width: 100%;
-  height: 475px;
+  height: auto;
+  overflow: hidden;
 `;
