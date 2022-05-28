@@ -82,3 +82,9 @@ export const FooterNavButton = styled.button`
   border-radius: 0px 8px 8px 0px;
   };
 `
+export const FooterNavText = styled.span`
+  font-family: var(--font);
+  font-weight: var(--bold);
+  color: var(--color-green);
+  font-size: 16px;
+`

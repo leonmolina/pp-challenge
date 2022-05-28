@@ -6,6 +6,7 @@ import {
   DropdownItem,
   DropdownMenu,
   FooterNavButton,
+  FooterNavText,
   FooterSelect,
   FooterText,
   ListArea,
@@ -115,7 +116,7 @@ export const Collaborators = () => {
               />
             </FooterNavButton>
             
-            <span>1 de 10</span>
+            <FooterNavText>1 de 10</FooterNavText>
 
             <FooterNavButton value="next" className="right">
             <Image

@@ -16,12 +16,12 @@ const Home: NextPage = () => {
       <Main className="container-fluid">
 
         {/* Sidebar */}
-        <LeftSide />
+        <LeftSide className="container" />
 
         {/* Main content */}
-        <RightSide>
+        <RightSide className="container">
 
-          <ContentArea>
+          <ContentArea className="container">
             {/* Título da página */}
             <TitleArea>
               <Title>Organização</Title>

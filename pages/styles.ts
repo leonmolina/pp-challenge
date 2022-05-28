@@ -5,15 +5,13 @@ export const Main = styled.main`
   padding: 0;
 `
 export const LeftSide = styled.div`
-  width: 256px;
+  max-width: 256px;
   height: auto;
   background-color: #FFF;
   box-shadow: 0px 4px 8px 0px rgba(165, 171, 179, 0.16);
   border: 1px solid #EAEFED;
- ;
 `
 export const RightSide = styled.div`
-  width: 100%;
   height: auto;
   background-color: #f8faf9;
   display: flex;

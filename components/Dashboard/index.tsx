@@ -6,8 +6,8 @@ import { Container, DashboardContent, DashboardTabs, FillerTab, Tab, TabTitle } 
 export const Dashboard = () => {
   const [tabSelected, setTabSelected] = useState(true);
   return (
-    <Container>
-      <DashboardTabs>
+    <Container className="container">
+      <DashboardTabs className="container">
         <Tab isTabSelected={true}>
           <TabTitle isTabSelected={true}>Colaboradores</TabTitle>
         </Tab>
@@ -16,7 +16,7 @@ export const Dashboard = () => {
         </Tab>
         <FillerTab />
       </DashboardTabs>
-      <DashboardContent>
+      <DashboardContent className="container">
         {tabSelected ? <Collaborators /> : <Roles />}
       </DashboardContent>
     </Container>
