@@ -8,7 +8,9 @@ export const Main = styled.main`
 export const LeftSide = styled.div`
   width: 256px;
   height: 100%;
-  background-color: #ccc;
+  background-color: #FFF;
+  border-right: 1px solid #ddd;
+ ;
 `
 export const RightSide = styled.div`
   width: 100%;

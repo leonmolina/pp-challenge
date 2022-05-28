@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Dashboard } from "../components/Dashboard";
+import { Header } from "../components/Header";
 import { ContentArea, LeftSide, Main, RightSide, TitleArea } from "./styles";
 
 const Home: NextPage = () => {
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Organization dashboard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <Main className="container-fluid">
         <LeftSide />
         <RightSide>
