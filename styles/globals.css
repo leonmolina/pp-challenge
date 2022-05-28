@@ -3,6 +3,11 @@
   --bold: 600;
   --medium: 500;
   --regular: 400;
+  --color-dark: #34423D;
+  --color-light: #A3B8B0;
+  --color-green: #587169;
+  --color-green--light: #CAD6D1;
+  --color-grey: #EAEFED;
 }
 
 html,

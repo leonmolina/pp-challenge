@@ -3,6 +3,7 @@ import { CollaboratorsBoard } from "../CollaboratorsBoard";
 import { SearchBar } from "../SearchBar";
 import {
   Container,
+  FooterText,
   ListArea,
   ListContent,
   ListFooter,
@@ -64,7 +65,7 @@ export const Collaborators = () => {
 
         <ListFooter>
           <ListFooterLeftSide>
-            <span>Mostrando 10 de 50 registros</span>
+            <FooterText>Mostrando 10 de 50 registros</FooterText>
             <select name="select" id="select">
               <option value="1">1</option>
               <option value="2">2</option>

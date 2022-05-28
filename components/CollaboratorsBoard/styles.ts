@@ -31,6 +31,8 @@ export const HeaderItem = styled.div`
 export const HeaderItemTitle = styled.span`
   font-family: var(--font);
   font-weight: var(--bold);
+  color: var(--color-green);
+  font-size: 12px;
 `
 export const ListContent = styled.div`
   width: 100%;

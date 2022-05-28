@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   border-radius: 10px;
   padding: 0 10px;
-  border: 1px solid #ccc;
+  border: 2px solid var(--color-green--light);
 `
 export const InputArea = styled.div`
   display: flex;

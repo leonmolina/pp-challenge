@@ -8,7 +8,7 @@ export const Container = styled.div<Status>`
   height: 25px;
   width: 80px;
   border-radius: 20px;
-  background-color: ${props => props.isActive ? '#b6f1dd' : '#eaeeed'};
+  background-color: ${props => props.isActive ? '#B5F1DD' : '#EAEFED'};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,4 +16,5 @@ export const Container = styled.div<Status>`
 export const StatusText = styled.span`
 font-family: var(--font);
 font-weight: var(--medium);
+font-size: 14px;
 `

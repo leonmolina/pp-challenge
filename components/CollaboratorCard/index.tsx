@@ -15,9 +15,12 @@ import {
   MoreOptions,
   MoreOptionsItem,
   Options,
+  OptionsDropdown,
   OptionsIcon,
   OptionsText,
 } from "./styles";
+import moreVertical from '../../public/more-vertical.svg'
+import Image from "next/image";
 
 type Props = {
   agents: Agents;
@@ -60,15 +63,20 @@ export const CollaboratorCard = ({ agents }: Props) => {
 
         {/* Opções */}
         <AgentItemArea className="more col-1">
-          <div className="dropdown">
+          <OptionsDropdown className="dropdown">
             <AgentOptions
               className="btn btn-sm"
-              type="button"
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <DotsThreeVertical size={32} />
+              {/* Três pontos verticais */}
+              <Image
+              src={moreVertical}
+              alt="Botão de mais opções"
+              width={124}
+              height={124}
+              />
             </AgentOptions>
             {/* Dropdown items */}
             <MoreOptions
@@ -92,7 +100,7 @@ export const CollaboratorCard = ({ agents }: Props) => {
                 </Options>
               </MoreOptionsItem>
             </MoreOptions>
-          </div>
+          </OptionsDropdown>
         </AgentItemArea>
       </AgentItems>
     </Container>

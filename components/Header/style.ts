@@ -35,6 +35,7 @@ export const UserAvatar = styled.div`
 export const AvatarFirstLetters = styled.span`
   font-family: var(--font);
   font-weight: var(--regular);
+  font-size: 14px;
 `;
 export const UserCard = styled.div`
   display: flex;

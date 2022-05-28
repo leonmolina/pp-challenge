@@ -55,10 +55,11 @@ export const AgentItemArea = styled.div`
 export const AgentItemText = styled.span`
   font-family: var(--font);
   font-weight: var(--regular);
-  font-size: 14px;
+  color: var(--color-green);
+  font-size: 12px;
 `;
 export const AgentStatus = styled.div``;
-export const AgentOptions = styled.button`
+export const AgentOptions = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,6 +68,8 @@ export const AgentOptions = styled.button`
     box-shadow: none;
   }
 `;
+export const OptionsDropdown = styled.div`
+`
 export const MoreOptions = styled.ul`
 `;
 export const MoreOptionsItem = styled.li`
