@@ -17,7 +17,7 @@ export const Dashboard = () => {
         <FillerTab />
       </DashboardTabs>
       <DashboardContent>
-      {tabSelected ? <Collaborators /> : <Roles />}
+        {tabSelected ? <Collaborators /> : <Roles />}
       </DashboardContent>
     </Container>
   );
