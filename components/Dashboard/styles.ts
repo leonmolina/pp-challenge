@@ -30,8 +30,12 @@ export const FillerTab = styled.div`
   width: 100%;
   border-bottom: 2px solid #EAEFED;
 `
-export const TabTitle = styled.h3`
+export const TabTitle = styled.h3<Props>`
   font-size: 14px;
   font-family: var(--font);
   font-weight: var(--bold);
+  color: var(--color-light);
+  ${({ isTabSelected }) => isTabSelected && css`
+    color: var(--color-dark);
+  `};
 `

@@ -45,7 +45,7 @@ export const CollaboratorsBoard = () => {
           <div key={k}>
             <CollaboratorCard agents={i} />
           </div>
-        ))}
+        )).slice(0, 6)}
       </ListContent>
     </Container>
   );

@@ -9,10 +9,10 @@ export const Dashboard = () => {
     <Container>
       <DashboardTabs>
         <Tab isTabSelected={true}>
-          <TabTitle>Colaboradores</TabTitle>
+          <TabTitle isTabSelected={true}>Colaboradores</TabTitle>
         </Tab>
         <Tab isTabSelected={false}>
-          <TabTitle>Cargos</TabTitle>
+          <TabTitle isTabSelected={false}>Cargos</TabTitle>
         </Tab>
         <FillerTab />
       </DashboardTabs>

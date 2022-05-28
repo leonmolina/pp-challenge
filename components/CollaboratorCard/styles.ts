@@ -9,7 +9,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 70px;
   width: 100%;
   border-bottom: 1px solid #ccc;
 `;

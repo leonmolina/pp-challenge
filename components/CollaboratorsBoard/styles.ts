@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   height: auto;
   width: 100%;
+  height: 100%;
   overflow: hidden;
   background-color: #fff;
   display: flex;
@@ -16,7 +17,7 @@ export const ListHeader = styled.div`
   align-items: center;
   height: 60px;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-green--light);
   border-radius: 10px 10px 0 0;
 `;
 export const HeaderItem = styled.div`
@@ -36,4 +37,5 @@ export const HeaderItemTitle = styled.span`
 `
 export const ListContent = styled.div`
   width: 100%;
+  height: 475px;
 `;
