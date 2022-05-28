@@ -1,14 +1,22 @@
-import { useState } from "react";
-import { Collaborators } from "../Collaborators";
-import { Roles } from "../Roles";
-import { Container, DashboardContent, DashboardTabs, FillerTab, Tab, TabTitle } from "./styles";
+import { AgentAvatar, AgentData, AgentEmail, AgentHeader, AgentInfo, AgentName, Container, DashboardContent } from "./styles";
 
 export const AgentDashboard = () => {
-  const [tabSelected, setTabSelected] = useState(false);
   return (
     <Container className="container">
       <DashboardContent className="container">
-        {tabSelected ? <Collaborators /> : <Roles />}
+
+        <AgentHeader>
+          <AgentAvatar></AgentAvatar>
+          <AgentData>
+            <AgentName></AgentName>
+            <AgentEmail></AgentEmail>
+          </AgentData>
+        </AgentHeader>
+
+        <AgentInfo>
+
+        </AgentInfo>
+
       </DashboardContent>
     </Container>
   );
