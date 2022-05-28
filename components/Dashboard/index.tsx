@@ -4,15 +4,15 @@ import { Roles } from "../Roles";
 import { Container, DashboardContent, DashboardTabs, FillerTab, Tab, TabTitle } from "./styles";
 
 export const Dashboard = () => {
-  const [tabSelected, setTabSelected] = useState(true);
+  const [tabSelected, setTabSelected] = useState(false);
   return (
     <Container className="container">
       <DashboardTabs className="container">
-        <Tab isTabSelected={true}>
-          <TabTitle isTabSelected={true}>Colaboradores</TabTitle>
-        </Tab>
         <Tab isTabSelected={false}>
-          <TabTitle isTabSelected={false}>Cargos</TabTitle>
+          <TabTitle isTabSelected={false}>Colaboradores</TabTitle>
+        </Tab>
+        <Tab isTabSelected={true}>
+          <TabTitle isTabSelected={true}>Cargos</TabTitle>
         </Tab>
         <FillerTab />
       </DashboardTabs>
