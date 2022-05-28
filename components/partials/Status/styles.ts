@@ -15,4 +15,5 @@ export const Container = styled.div<Status>`
 `
 export const StatusText = styled.span`
   font-family: Roboto;
+  font-weight: bold;
 `

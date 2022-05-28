@@ -22,6 +22,9 @@ export const RightSide = styled.div`
 export const TitleArea = styled.div`
   width: 100%;
 `
+export const Title = styled.h1`
+  font-family: Roboto;
+`
 export const ContentArea = styled.div`
   width: 80%;
   height: 100vw;

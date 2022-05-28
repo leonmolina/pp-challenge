@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CollaboratorsBoard } from "../CollaboratorsBoard";
+import { SearchBar } from "../SearchBar";
 import {
   Container,
   ListArea,
@@ -8,7 +9,6 @@ import {
   ListFooterLeftSide,
   ListFooterRightSide,
   ListTitle,
-  SearchInput,
 } from "./styles";
 
 interface Phone {
@@ -46,17 +46,14 @@ export interface Agents {
 }
 
 export const Collaborators = () => {
-  const [search, setSearch] = useState("");
 
   return (
     <Container>
       {/* Barra de pesquisa dos Colaboradores */}
-      <SearchInput
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        placeholder="Pesquise por nome ou cpf"
-      />
+      <SearchBar />
+
       <ListTitle>Listagem de colaboradores</ListTitle>
+      
       <ListArea>
 
         <ListContent>
