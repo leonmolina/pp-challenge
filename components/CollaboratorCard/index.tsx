@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Agents } from "../Collaborators";
+import { Status } from "../partials/Status";
 import {
   AgentAvatar,
   AgentItemArea,
@@ -16,6 +18,7 @@ import {
 type Props = {
   agents: Agents;
 };
+
 
 export const CollaboratorCard = ({ agents }: Props) => {
   return (
@@ -48,7 +51,7 @@ export const CollaboratorCard = ({ agents }: Props) => {
         {/* Status */}
         <AgentItemArea className="col-2">
           <AgentStatus>
-            <AgentStatusText>{agents.status}</AgentStatusText>
+            <Status status={agents.status} />
           </AgentStatus>
         </AgentItemArea>
 
