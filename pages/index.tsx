@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Dashboard } from "../components/Dashboard";
 import { Header } from "../components/Header";
-import { ContentArea, LeftSide, Main, RightSide, TitleArea } from "./styles";
+import { ContentArea, LeftSide, Main, RightSide, Title, TitleArea } from "./styles";
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <RightSide>
           <ContentArea>
             <TitleArea>
-              <h1>Organização</h1>
+              <Title>Organização</Title>
             </TitleArea>
             <Dashboard />
           </ContentArea>

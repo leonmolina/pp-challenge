@@ -23,7 +23,8 @@ export const TitleArea = styled.div`
   width: 100%;
 `
 export const Title = styled.h1`
-  font-family: Roboto;
+  font-family: 'Poppins', sans-serif;
+  color: #f00;
 `
 export const ContentArea = styled.div`
   width: 80%;
