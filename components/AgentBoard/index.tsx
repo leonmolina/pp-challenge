@@ -43,7 +43,7 @@ export const AgentBoard = ( {agent} : Props) => {
 
         <InfoCardsArea>
 
-          {/* <AgentInfoCard>
+          <AgentInfoCard>
             <InfoIcon>Ícone</InfoIcon>
             <InfoData>
               <InfoText>{agent.document.type}</InfoText>
@@ -57,7 +57,7 @@ export const AgentBoard = ( {agent} : Props) => {
               <InfoText>Telefone</InfoText>
               <InfoContent>{`+${agent.phone.ddi} ${agent.phone.ddd} ${agent.phone.number}`}</InfoContent>
             </InfoData>
-          </AgentInfoCard> */}
+          </AgentInfoCard>
 
           <AgentInfoCard>
             <InfoIcon>Ícone</InfoIcon>
