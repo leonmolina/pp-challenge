@@ -36,9 +36,7 @@ export const Collaborators = ({agents}: Props) => {
 
             <ListContent>
               {agents?.map((i, k) => (
-                <div key={k}>
-                  <CollaboratorCard agents={i} />
-                </div>
+                  <CollaboratorCard agents={i} key={k} />
               )).slice(0, 6)}
             </ListContent>
           </CollaboratorsBoard>

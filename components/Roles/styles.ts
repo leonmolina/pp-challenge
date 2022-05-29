@@ -31,37 +31,20 @@ export const ListContent = styled.div`
   overflow: hidden;
   background-color: #EEE;
 `;
-export const ListFooter = styled.div`
+
+export const RolesBoard = styled.div`
+  height: auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
   display: flex;
-  height: 50px;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 24px;
 `;
-export const ListFooterRightSide = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-export const FooterNavButton = styled.button`
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 36px;
-  margin: 0 10px;
-  &.left {
-    border: 1.4px solid #CAD6D1;
-    border-radius: 8px 0px 0px 8px;
-  };
-  &.right {
-  border: 1.4px solid #709085;
-  border-radius: 0px 8px 8px 0px;
-  };
-`
-export const FooterNavText = styled.span`
-  font-family: var(--font);
-  font-weight: var(--bold);
-  color: var(--color-green);
-  font-size: 16px;
-`
+export const RolesContent = styled.div`
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+`;

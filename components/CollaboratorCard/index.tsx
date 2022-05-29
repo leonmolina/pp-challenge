@@ -1,5 +1,4 @@
-import { Eye, DotsThreeVertical, Trash } from "phosphor-react";
-import { Agents } from "../Collaborators";
+import { Eye, Trash } from "phosphor-react";
 import { Status } from "../partials/Status";
 import {
   AgentAvatar,
@@ -21,6 +20,7 @@ import {
 } from "./styles";
 import moreVertical from '../../public/more-vertical.svg'
 import Image from "next/image";
+import { Agents } from "../../types/Agents";
 
 type Props = {
   agents: Agents;

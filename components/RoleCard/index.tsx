@@ -14,10 +14,10 @@ import {
 } from "./styles";
 import moreVertical from '../../public/more-vertical.svg'
 import Image from "next/image";
-import { Roles } from "../Roles";
+import { RolesType } from "../../types/Roles";
 
 type Props = {
-  roles: Roles;
+  roles: RolesType;
 };
 
 export const RoleCard = ({ roles }: Props) => {

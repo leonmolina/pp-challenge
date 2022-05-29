@@ -7,14 +7,16 @@ import { Header } from "../components/Header";
 import { Roles } from "../components/Roles";
 import { api } from "../services/api";
 import { Agents } from "../types/Agents";
+import { RolesType } from "../types/Roles";
 import { ContentArea, Dashboard, DashboardContent, DashboardTabs, FillerTab, LeftSide, Main, RightSide, Tab, TabTitle, Title, TitleArea } from "./styles";
 
 type Props = {
-  agents: Agents[]
+  agents: Agents[],
+  roles: RolesType[]
 }
 // :NextPage
-const Home = ({agents}: Props) => {
-  const [tabSelected, setTabSelected] = useState(true);
+const Home = ({agents, roles}: Props) => {
+  const [tabSelected, setTabSelected] = useState(false);
   return (
     <>
       <Head>
@@ -49,9 +51,12 @@ const Home = ({agents}: Props) => {
                   </Tab>
                   <FillerTab />
                 </DashboardTabs>
+                
+                {/* Conteúdo */}
                 <DashboardContent className="container">
-                  {tabSelected ? <Collaborators agents={agents} /> : <Roles />}
+                  {tabSelected ? <Collaborators agents={agents} /> : <Roles roles={roles} />}
                 </DashboardContent>
+
             </Dashboard>
 
           </ContentArea>
@@ -62,11 +67,14 @@ const Home = ({agents}: Props) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await api.get("/agents")
-  const agents = res.data.items
+  const agentsRes = await api.get("/agents");
+  const rolesRes = await api.get("/roles");
+  const agents = agentsRes.data.items;
+  const roles = rolesRes.data.roles;
   return {
     props: {
-      agents
+      agents,
+      roles
     }
   }
 }

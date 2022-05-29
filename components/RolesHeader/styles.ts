@@ -1,17 +1,5 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.div`
-  height: auto;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const ListHeader = styled.div`
   display: flex;
   align-items: center;
@@ -27,7 +15,7 @@ export const HeaderItem = styled.div`
   align-items: center;
   &.main {
     justify-content: flex-start;
-  };
+  }
 `
 export const HeaderItemTitle = styled.span`
   font-family: var(--font);
@@ -35,8 +23,3 @@ export const HeaderItemTitle = styled.span`
   color: var(--color-green);
   font-size: 12px;
 `
-export const ListContent = styled.div`
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-`;

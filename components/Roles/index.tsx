@@ -1,19 +1,17 @@
 import { SearchBar } from "../SearchBar";
 import {
   Container,
-  FooterNavButton,
-  FooterNavText,
   ListArea,
   ListContent,
-  ListFooter,
-  ListFooterRightSide,
   ListTitle,
+  RolesBoard,
+  RolesContent,
   SearchLabel,
 } from "./styles";
-import arrowLeft from "../../public/chevron-left.svg";
-import arrowRight from "../../public/chevron-right.svg";
-import Image from "next/image";
-import { RolesBoard } from "../RolesBoard";
+import { RolesFooter } from "../RolesFooter";
+import { RolesType } from "../../types/Roles";
+import { RoleCard } from "../RoleCard";
+import { RolesHeader } from "../RolesHeader";
 
 interface Rules {
   role: string;
@@ -25,13 +23,12 @@ export interface Role {
   departament: string;
   grouprules: Rules[];
 }
-export interface Roles {
-  name: string;
-  departament: string;
-  agents_quantity: number;
-}
 
-export const Roles = () => {
+type Props = {
+  roles: RolesType[];
+};
+
+export const Roles = ({ roles }: Props) => {
   return (
     <Container>
       {/* Barra de pesquisa dos Cargos */}
@@ -41,36 +38,26 @@ export const Roles = () => {
       <ListTitle>Listagem de cargos</ListTitle>
 
       <ListArea>
+        {/* Conteúdo */}
         <ListContent>
-          <RolesBoard />
+          <RolesBoard>
+            {/* Roles Header */}
+            <RolesHeader />
+
+            {/* Conteúdo */}
+            <RolesContent>
+              {roles
+                ?.map((i, k) => (
+                  <RoleCard roles={i} key={k} />
+                ))
+                .slice(0, 8)}
+            </RolesContent>
+          </RolesBoard>
         </ListContent>
 
-        <ListFooter>
-          <ListFooterRightSide>
-            <FooterNavButton value="prev" className="left">
-              <Image
-                width={24}
-                height={24}
-                src={arrowLeft}
-                alt="Ícone flecha para a esquerda, simbolizando voltar na lista."
-              />
-            </FooterNavButton>
-            
-            <FooterNavText>1 de 10</FooterNavText>
-
-            <FooterNavButton value="next" className="right">
-            <Image
-                width={24}
-                height={24}
-                src={arrowRight}
-                alt="Ícone flecha para a direita, simbolizando continuar na lista."
-              />
-            </FooterNavButton>
-
-          </ListFooterRightSide>
-
-        </ListFooter>
+        {/* Roles footer */}
+        <RolesFooter />
       </ListArea>
     </Container>
-  )
-}
+  );
+};
