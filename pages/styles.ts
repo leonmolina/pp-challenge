@@ -37,8 +37,6 @@ export const ContentArea = styled.div`
   margin: 56px 0 80px 0;
 `
 
-
-
 export const Dashboard = styled.div`
   background-color: #fff;
   height: auto;
@@ -52,7 +50,7 @@ export const DashboardTabs = styled.div`
   display: flex;
   height: 30px;
 `
-export const Tab = styled.div<Props>`
+export const Tab = styled.label<Props>`
   width: 300px;
   height: 100%;
   display: flex;

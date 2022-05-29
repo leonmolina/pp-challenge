@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Container,
   InfoTitle,
@@ -10,7 +9,6 @@ import {
   RoleOrgCard,
   RolePermissions,
 } from "./styles";
-import downIcon from "../../public/chevron-down.svg";
 import { Role } from "../../types/Role";
 import { RoleHeader } from "../partials/RoleHeader";
 import { PermissionsBoard } from "../PermissionsBoard";
@@ -52,8 +50,9 @@ export const RoleBoard = ({ role }: Props) => {
       {/* Header permissões */}
       <RoleHeader />
       {/* Conteúdo cards de permissões */}
+
       <RolePermissions>
-        <PermissionsBoard />
+        <PermissionsBoard permissions={role.grouprules} />
       </RolePermissions>
     
     </Container>

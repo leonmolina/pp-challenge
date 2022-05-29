@@ -14,7 +14,7 @@ type Props = {
 }
 // :NextPage
 const Home = ({agents, roles}: Props) => {
-  const [tabSelected, setTabSelected] = useState(false);
+  const [tabSelected, setTabSelected] = useState('agents');
   return (
     <>
       <Head>
@@ -40,20 +40,28 @@ const Home = ({agents, roles}: Props) => {
             {/* Conteúdo */}
 
             <Dashboard className="container">
+
                 <DashboardTabs className="container">
-                  <Tab isTabSelected={false}>
-                    <TabTitle isTabSelected={false}>Colaboradores</TabTitle>
-                  </Tab>
-                  <Tab isTabSelected={true}>
-                    <TabTitle isTabSelected={true}>Cargos</TabTitle>
-                  </Tab>
+                  <div className="form-check">
+                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onClick={() => setTabSelected('agents')} />
+                      <Tab className="form-check-label" isTabSelected={false}>
+                        <TabTitle isTabSelected={false}>Colaboradores</TabTitle>
+                      </Tab>
+                  </div>
+                  <div className="form-check">
+                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onClick={() => setTabSelected('roles')} />
+                      <Tab className="form-check-label" isTabSelected={true}>
+                        <TabTitle isTabSelected={true}>Cargos</TabTitle>
+                      </Tab>
+                  </div>
                   <FillerTab />
                 </DashboardTabs>
+
                 
                 {/* Conteúdo */}
                 <DashboardContent className="container">
 
-                  {tabSelected ? <Agents agents={agents} /> : <Roles roles={roles} />}
+                  {tabSelected === 'agents' ? <Agents agents={agents} /> : <Roles roles={roles} />}
                   
                 </DashboardContent>
 

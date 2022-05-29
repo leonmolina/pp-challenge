@@ -30,7 +30,7 @@ export const PermissionItemText = styled.span`
 `;
 export const PermissionCheckbox = styled.div`
 `
-export const PermissionLabel = styled.label`
+export const PermissionLabel = styled.div`
   width: 20px;
   height: 28px;
 `
