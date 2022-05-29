@@ -29,6 +29,11 @@ export const PermissionItemText = styled.span`
   font-size: 12px;
 `;
 export const PermissionCheckbox = styled.div`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 export const PermissionLabel = styled.div`
   width: 20px;
