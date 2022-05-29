@@ -57,3 +57,7 @@ export const OrgCardText = styled.span`
   font-weight: var(--medium);
   color: var(--color-green);
 `
+export const RolePermissions = styled.div`
+  width: 100%;
+  height: auto;
+`

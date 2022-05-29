@@ -8,9 +8,12 @@ import {
   RoleData,
   RoleInfo,
   RoleOrgCard,
+  RolePermissions,
 } from "./styles";
 import downIcon from "../../public/chevron-down.svg";
 import { Role } from "../../types/Role";
+import { RoleHeader } from "../partials/RoleHeader";
+import { PermissionsBoard } from "../partials/PermissionsBoard";
 
 type Props = {
   role: Role;
@@ -65,6 +68,10 @@ export const RoleBoard = ({ role }: Props) => {
       <RoleInfo>
         <InfoTitle>Listagem de permissões</InfoTitle>
       </RoleInfo>
+      <RoleHeader />
+      <RolePermissions>
+        <PermissionsBoard />
+      </RolePermissions>
     
     </Container>
   );
