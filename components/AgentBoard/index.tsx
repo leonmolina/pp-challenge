@@ -21,19 +21,26 @@ import {
   OrgText,
   OrgTitle,
 } from "./styles";
-import idIcon from '../../public/id.svg';
-import phoneIcon from '../../public/phone-call.svg';
-import dateIcon from '../../public/calendar.svg'
+import idIcon from "../../public/id.svg";
+import phoneIcon from "../../public/phone-call.svg";
+import dateIcon from "../../public/calendar.svg";
 
 type Props = {
   agent: Agent;
 };
-export const AgentBoard = ( {agent} : Props) => {
+
+export const AgentBoard = ({ agent }: Props) => {
   return (
     <Container>
       <AgentHeader>
         <AgentAvatar>
-          <Image src={agent.image} alt="Imagem do colaborador" width={80} height={80} style={{borderRadius: 40}} />
+          <Image
+            src={agent.image}
+            alt="Imagem do colaborador"
+            width={80}
+            height={80}
+            style={{ borderRadius: 40 }}
+          />
         </AgentAvatar>
         <AgentData>
           <AgentName>{agent.name}</AgentName>
@@ -45,10 +52,9 @@ export const AgentBoard = ( {agent} : Props) => {
         <InfoTitle>Informações pessoais</InfoTitle>
 
         <InfoCardsArea>
-
           <AgentInfoCard>
             <InfoIcon>
-              <Image src={idIcon} alt={'Ícone simbolizando um documento.'} />
+              <Image src={idIcon} alt={"Ícone simbolizando um documento."} />
             </InfoIcon>
             <InfoData>
               <InfoText>{agent.document.type}</InfoText>
@@ -58,7 +64,7 @@ export const AgentBoard = ( {agent} : Props) => {
 
           <AgentInfoCard>
             <InfoIcon>
-              <Image src={phoneIcon} alt={'Ícone simbolizando um telefone.'} />
+              <Image src={phoneIcon} alt={"Ícone simbolizando um telefone."} />
             </InfoIcon>
             <InfoData>
               <InfoText>Telefone</InfoText>
@@ -68,7 +74,7 @@ export const AgentBoard = ( {agent} : Props) => {
 
           <AgentInfoCard>
             <InfoIcon>
-              <Image src={dateIcon} alt={'Ícone simbolizando um calendário.'} />
+              <Image src={dateIcon} alt={"Ícone simbolizando um calendário."} />
             </InfoIcon>
             <InfoData>
               <InfoText>Nascimento</InfoText>

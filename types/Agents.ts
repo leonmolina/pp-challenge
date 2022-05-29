@@ -1,4 +1,4 @@
-export interface Agents {
+export interface AgentsType {
   agent_id: number;
   name: string;
   image: string;

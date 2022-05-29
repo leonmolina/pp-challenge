@@ -20,12 +20,28 @@ export const RightSide = styled.div`
 `
 export const TitleArea = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 24px 0;
+`
+export const TitleBackButton = styled.a`
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: var(--color-grey);
+  margin-right: 16px;
+  cursor: pointer;
 `
 export const Title = styled.h2`
   font-family: var(--font);
   font-weight: var(--bold);
+  color: var(--color-dark);
   font-size: 32px;
-  margin: 0 0 24px 0;
+  margin: 0;
 `
 export const ContentArea = styled.div`
   width: 956px;

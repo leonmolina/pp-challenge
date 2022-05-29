@@ -11,15 +11,15 @@ import {
 } from "./styles";
 import { AgentsFooter } from "../partials/AgentsFooter";
 import { AgentsHeader } from "../partials/AgentsHeader";
-import { Agents } from "../../types/Agents";
-import { CollaboratorCard } from "../CollaboratorCard";
+import { AgentsType } from "../../types/Agents";
+import { AgentCard } from "../AgentCard";
 import Link from "next/link";
 
 type Props = {
-  agents: Agents[]
-}
+  agents: AgentsType[];
+};
 
-export const Collaborators = ({agents}: Props) => {
+export const Agents = ({ agents }: Props) => {
   return (
     <Container>
       {/* Barra de pesquisa dos Colaboradores */}
@@ -29,24 +29,23 @@ export const Collaborators = ({agents}: Props) => {
       <ListTitle>Listagem de colaboradores</ListTitle>
 
       <ListArea>
-
         {/* Conteúdo */}
         <ListContentArea>
-          
           <CollaboratorsBoard>
             <AgentsHeader />
 
             <ListContent>
-              {agents?.map((i, k) => (
+              {agents
+                ?.map((i, k) => (
                   <Link key={k} href={`/agente/${i.agent_id}`}>
                     <CardLink>
-                      <CollaboratorCard agents={i} />
+                      <AgentCard agents={i} />
                     </CardLink>
                   </Link>
-              )).slice(0, 6)}
+                ))
+                .slice(0, 6)}
             </ListContent>
           </CollaboratorsBoard>
-          
         </ListContentArea>
 
         {/* Footer */}

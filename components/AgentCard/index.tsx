@@ -18,15 +18,15 @@ import {
   OptionsIcon,
   OptionsText,
 } from "./styles";
-import moreVertical from '../../public/more-vertical.svg'
+import moreVertical from "../../public/more-vertical.svg";
 import Image from "next/image";
-import { Agents } from "../../types/Agents";
+import { AgentsType } from "../../types/Agents";
 
 type Props = {
-  agents: Agents;
+  agents: AgentsType;
 };
 
-export const CollaboratorCard = ({ agents }: Props) => {
+export const AgentCard = ({ agents }: Props) => {
   return (
     <Container>
       <AgentItems className="row">
@@ -72,10 +72,10 @@ export const CollaboratorCard = ({ agents }: Props) => {
             >
               {/* Três pontos verticais */}
               <Image
-              src={moreVertical}
-              alt="Botão de mais opções"
-              width={124}
-              height={124}
+                src={moreVertical}
+                alt="Botão de mais opções"
+                width={124}
+                height={124}
               />
             </AgentOptions>
             {/* Dropdown items */}
@@ -93,7 +93,7 @@ export const CollaboratorCard = ({ agents }: Props) => {
               </MoreOptionsItem>
               <MoreOptionsItem>
                 <Options isDisabled className="dropdown-item">
-                <OptionsIcon>
+                  <OptionsIcon>
                     <Trash size={20} />
                   </OptionsIcon>
                   <OptionsText>Excluir</OptionsText>

@@ -12,7 +12,7 @@ import {
   OptionsIcon,
   OptionsText,
 } from "./styles";
-import moreVertical from '../../public/more-vertical.svg'
+import moreVertical from "../../public/more-vertical.svg";
 import Image from "next/image";
 import { RolesType } from "../../types/Roles";
 
@@ -50,10 +50,10 @@ export const RoleCard = ({ roles }: Props) => {
             >
               {/* Três pontos verticais */}
               <Image
-              src={moreVertical}
-              alt="Botão de mais opções"
-              width={24}
-              height={24}
+                src={moreVertical}
+                alt="Botão de mais opções"
+                width={24}
+                height={24}
               />
             </AgentOptions>
             {/* Dropdown items */}
@@ -71,7 +71,7 @@ export const RoleCard = ({ roles }: Props) => {
               </MoreOptionsItem>
               <MoreOptionsItem>
                 <Options isDisabled className="dropdown-item">
-                <OptionsIcon>
+                  <OptionsIcon>
                     <Trash size={20} />
                   </OptionsIcon>
                   <OptionsText>Excluir</OptionsText>

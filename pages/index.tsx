@@ -1,15 +1,15 @@
 import Head from "next/head";
 import { useState } from "react";
-import { Collaborators } from "../components/Collaborators";
+import { Agents } from "../components/Agents";
 import { Header } from "../components/Header";
 import { Roles } from "../components/Roles";
 import { api } from "../services/api";
-import { Agents } from "../types/Agents";
+import { AgentsType } from "../types/Agents";
 import { RolesType } from "../types/Roles";
 import { ContentArea, Dashboard, DashboardContent, DashboardTabs, FillerTab, LeftSide, Main, RightSide, Tab, TabTitle, Title, TitleArea } from "./styles";
 
 type Props = {
-  agents: Agents[],
+  agents: AgentsType[],
   roles: RolesType[]
 }
 // :NextPage
@@ -53,7 +53,7 @@ const Home = ({agents, roles}: Props) => {
                 {/* Conteúdo */}
                 <DashboardContent className="container">
 
-                  {tabSelected ? <Collaborators agents={agents} /> : <Roles roles={roles} />}
+                  {tabSelected ? <Agents agents={agents} /> : <Roles roles={roles} />}
                   
                 </DashboardContent>
 

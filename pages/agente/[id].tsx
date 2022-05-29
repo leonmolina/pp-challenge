@@ -1,11 +1,12 @@
-import type { NextPage, GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { ParsedUrlQuery } from "querystring";
 import { AgentBoard } from "../../components/AgentBoard";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 import { Agent } from "../../types/Agent";
-import { Agents } from "../../types/Agents";
+import { AgentsType } from "../../types/Agents";
 import { DashboardContent } from "../styles";
 import {
   AgentDashboard,
@@ -15,7 +16,10 @@ import {
   RightSide,
   Title,
   TitleArea,
+  TitleBackButton,
 } from "./styles";
+import backButton from "../../public/arrow-left.svg";
+import Link from "next/link";
 
 type Props = {
   agent: Agent;
@@ -39,6 +43,14 @@ const AgentQuery = ({ agent }: Props) => {
           <ContentArea className="container">
             {/* Título da página */}
             <TitleArea>
+              <Link href="/">
+                <TitleBackButton>
+                  <Image
+                    src={backButton}
+                    alt="Ícone de flecha para a esquerda, indicando voltar à pagina anterior."
+                  />
+                </TitleBackButton>
+              </Link>
               <Title>Detalhes do colaborador</Title>
             </TitleArea>
 
@@ -60,7 +72,7 @@ export default AgentQuery;
 // Só percebi que não existia rota pra cada um dos agents depois que fiz as static paths.
 export const getStaticPaths = async () => {
   const agentsRes = await api.get("/agents");
-  const agents: Agents[] = agentsRes.data.items;
+  const agents: AgentsType[] = agentsRes.data.items;
 
   const paths = agents.map((agent) => ({
     params: { id: agent.agent_id.toString() },
@@ -74,7 +86,6 @@ interface IdParams extends ParsedUrlQuery {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params as IdParams;
-
 
   // const res = await api.get(`/agent/${id}`);   -- se houvesse rota para cada um dos colaboradores.
   const res = await api.get(`/agent/1`);
