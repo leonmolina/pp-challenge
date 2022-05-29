@@ -6,7 +6,6 @@ import {
   ListTitle,
   RolesBoard,
   RolesContent,
-  SearchLabel,
 } from "./styles";
 import { RolesFooter } from "../partials/RolesFooter";
 import { RolesType } from "../../types/Roles";
@@ -21,7 +20,6 @@ export const Roles = ({ roles }: Props) => {
   return (
     <Container>
       {/* Barra de pesquisa dos Cargos */}
-      <SearchLabel>Pesquisar por</SearchLabel>
       <SearchBar />
 
       <ListTitle>Listagem de cargos</ListTitle>

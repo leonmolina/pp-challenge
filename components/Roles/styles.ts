@@ -5,13 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-export const SearchLabel = styled.label`
-  font-family: var(--font);
-  font-weight: var(--medium);
-  color: var(--color-light);
-  font-size: 14px;
-  margin: 40px 0 0 20px;
-`
 export const ListTitle = styled.h3`
   font-family: var(--font);
   font-weight: var(--bold);
@@ -23,7 +16,6 @@ export const ListArea = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
 `;
 export const ListContent = styled.div`
   width: 100%;

@@ -2,8 +2,11 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   border-radius: 10px;
+  width: 100%;
   padding: 0 10px;
   border: 2px solid var(--color-green--light);
+  margin: 40px 0 0 0;
+  position: relative;
 `
 export const InputArea = styled.div`
   display: flex;
@@ -14,8 +17,25 @@ export const SearchInput = styled.input`
   width: 100%;
   height: 50px;
   border: none;
+  padding-left: 8px;
   &:focus{
     border: none;
     outline: none;
+  };
+  &::placeholder {
+    font-family: var(--font);
+    font-weight: var(--medium);
+    color: var(--color-green);
+    font-size: 16px;
   }
 `;
+export const SearchLabel = styled.label`
+  font-family: var(--font);
+  font-weight: var(--medium);
+  color: var(--color-light);
+  font-size: 14px;
+  background-color: #fff;
+  position: absolute;
+  top: -12px;
+  padding: 0 3px;
+`

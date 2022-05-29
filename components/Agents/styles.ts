@@ -23,7 +23,6 @@ export const ListArea = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
 `;
 export const ListContentArea = styled.div`
   width: 100%;

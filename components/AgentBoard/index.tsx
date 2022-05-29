@@ -94,8 +94,8 @@ export const AgentBoard = ({ agent }: Props) => {
 
             <AgentOrgCard>
               <AgentCardSection>
-              <OrgCardTitle>Departamento</OrgCardTitle>
-              <OrgCardText>{agent.department}</OrgCardText>
+                <OrgCardTitle>Departamento</OrgCardTitle>
+                <OrgCardText>{agent.department}</OrgCardText>
               </AgentCardSection>
               <AgentCardSection>
                 <Image src={downIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />

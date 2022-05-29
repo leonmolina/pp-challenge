@@ -77,8 +77,8 @@ export const AgentCard = ({ agents }: Props) => {
               <Image
                 src={moreVertical}
                 alt="Botão de mais opções"
-                width={124}
-                height={124}
+                width={24}
+                height={24}
               />
             </AgentOptions>
 
