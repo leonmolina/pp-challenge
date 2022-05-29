@@ -1,4 +1,3 @@
-import { Eye, Trash } from "phosphor-react";
 import {
   AgentItemArea,
   AgentItems,
@@ -15,6 +14,8 @@ import {
 import moreVertical from "../../public/more-vertical.svg";
 import Image from "next/image";
 import { RolesType } from "../../types/Roles";
+import eyeIcon from '../../public/eye.svg';
+import trashIcon from '../../public/trash.svg';
 
 type Props = {
   roles: RolesType;
@@ -64,15 +65,15 @@ export const RoleCard = ({ roles }: Props) => {
               <MoreOptionsItem>
                 <Options className="dropdown-item" href="#">
                   <OptionsIcon>
-                    <Eye size={20} />
+                    <Image src={eyeIcon} width={24} height={24} alt="Ícone de um olho, para ver a página do colaborador." />
                   </OptionsIcon>
-                  <OptionsText>Ver colaborador</OptionsText>
+                  <OptionsText>Ver cargo</OptionsText>
                 </Options>
               </MoreOptionsItem>
               <MoreOptionsItem>
                 <Options isDisabled className="dropdown-item">
                   <OptionsIcon>
-                    <Trash size={20} />
+                  <Image src={trashIcon} width={24} height={24} alt="ícone de um lixeiro, para excluir o colaborador."/>
                   </OptionsIcon>
                   <OptionsText>Excluir</OptionsText>
                 </Options>

@@ -37,11 +37,7 @@ export const Agents = ({ agents }: Props) => {
             <ListContent>
               {agents
                 ?.map((i, k) => (
-                  <Link key={k} href={`/agente/${i.agent_id}`}>
-                    <CardLink>
-                      <AgentCard agents={i} />
-                    </CardLink>
-                  </Link>
+                  <AgentCard agents={i} key={k} />
                 ))
                 .slice(0, 6)}
             </ListContent>
