@@ -15,6 +15,7 @@ export const Container = styled.div`
 export const AgentHeader = styled.div`
   display: flex;
   height: 100px;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
 `
@@ -48,6 +49,7 @@ export const AgentEmail = styled.span`
 
 export const AgentInfo = styled.div`
   margin: 40px 0;
+  width: 100%;
 `
 export const InfoTitle = styled.span`
   font-family: var(--font);
@@ -65,6 +67,8 @@ export const InfoCardsArea = styled.div`
 export const AgentInfoCard = styled.div`
   border: 1px solid #000;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 270px;
   height: 70px;
   background-color: #F5FAF8;
@@ -78,7 +82,7 @@ export const InfoIcon = styled.div`
   align-items: center;
   height: 38px;
   width: 38px;
-  background-color: #f00;
+  background-color: var(--color-green--light);
   border-radius: 19px;
 ` 
 export const InfoData = styled.div`
