@@ -73,7 +73,8 @@ export const getStaticProps = async () => {
     props: {
       agents,
       roles
-    }
+    },
+    revalidate: 3600
   }
 }
 
