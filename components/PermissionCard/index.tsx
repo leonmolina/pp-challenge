@@ -9,7 +9,6 @@ import {
 import checkedIcon from "../../public/checkbox-checked.svg";
 import uncheckedIcon from "../../public/checkbox-unchecked.svg";
 import Image from "next/image";
-import { useState } from "react";
 
 type Props = {
   role: string;
@@ -17,11 +16,6 @@ type Props = {
 };
 
 export const PermissionCard = ({ role, permissions }: Props) => {
-  const [readSelected, setReadSelected] = useState(permissions);
-  const [editSelected, setEditSelected] = useState(permissions);
-  const [removeSelected, setRemoveSelected] = useState(permissions);
-
-
   return (
     <Container>
       <PermissionItems
