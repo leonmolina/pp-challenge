@@ -6,15 +6,42 @@ import { Roles } from "../components/Roles";
 import { api } from "../services/api";
 import { AgentsType } from "../types/Agents";
 import { RolesType } from "../types/Roles";
-import { ContentArea, Dashboard, DashboardContent, DashboardTabs, FillerTab, LeftSide, Main, RightSide, Tab, TabTitle, Title, TitleArea } from "./styles";
+import {
+  ContentArea,
+  Dashboard,
+  DashboardContent,
+  DashboardTabs,
+  FillerTab,
+  LeftSide,
+  Main,
+  RightSide,
+  Tab,
+  TabTitle,
+  Title,
+  TitleArea,
+} from "./styles";
 
 type Props = {
-  agents: AgentsType[],
-  roles: RolesType[]
-}
+  agents: AgentsType[];
+  roles: RolesType[];
+};
 // :NextPage
-const Home = ({agents, roles}: Props) => {
-  const [tabSelected, setTabSelected] = useState('agents');
+const Home = ({ agents, roles }: Props) => {
+  const [tabSelected, setTabSelected] = useState("agents");
+  const [agentsSelected, setAgentsSelected] = useState(true);
+  const [rolesSelected, setRolesSelected] = useState(false);
+
+  const handleTab = (tab: string) => {
+    setTabSelected(tab);
+    if (tab === 'agents') {
+      setAgentsSelected(true);
+      setRolesSelected(false);
+    } else {
+      setAgentsSelected(false);
+      setRolesSelected(true);
+    }
+  }
+
   return (
     <>
       <Head>
@@ -24,49 +51,43 @@ const Home = ({agents, roles}: Props) => {
       </Head>
       <Header />
       <Main className="container-fluid">
-
         {/* Sidebar */}
         <LeftSide className="container" />
 
         {/* Main content */}
         <RightSide className="container">
-
           <ContentArea className="container">
             {/* Título da página */}
             <TitleArea>
               <Title>Organização</Title>
             </TitleArea>
-            
+
             {/* Conteúdo */}
 
             <Dashboard className="container">
+              <DashboardTabs className="container">
 
-                <DashboardTabs className="container">
-                  <div className="form-check">
-                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onClick={() => setTabSelected('agents')} />
-                      <Tab className="form-check-label" isTabSelected={false}>
-                        <TabTitle isTabSelected={false}>Colaboradores</TabTitle>
-                      </Tab>
-                  </div>
-                  <div className="form-check">
-                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onClick={() => setTabSelected('roles')} />
-                      <Tab className="form-check-label" isTabSelected={true}>
-                        <TabTitle isTabSelected={true}>Cargos</TabTitle>
-                      </Tab>
-                  </div>
-                  <FillerTab />
-                </DashboardTabs>
+                  <Tab className="form-check-label" isTabSelected={agentsSelected} onClick={() => handleTab('agents')}>
+                    <TabTitle isTabSelected={agentsSelected}>Colaboradores</TabTitle>
+                  </Tab>
 
-                
-                {/* Conteúdo */}
-                <DashboardContent className="container">
+                  <Tab className="form-check-label" isTabSelected={rolesSelected} onClick={() => handleTab('roles')}>
+                    <TabTitle isTabSelected={rolesSelected}>Cargos</TabTitle>
+                  </Tab>
+                {/* Barra horizontal fixa */}
+                <FillerTab />
 
-                  {tabSelected === 'agents' ? <Agents agents={agents} /> : <Roles roles={roles} />}
-                  
-                </DashboardContent>
+              </DashboardTabs>
 
+              {/* Conteúdo */}
+              <DashboardContent className="container">
+                {tabSelected === "agents" ? (
+                  <Agents agents={agents} />
+                ) : (
+                  <Roles roles={roles} />
+                )}
+              </DashboardContent>
             </Dashboard>
-
           </ContentArea>
         </RightSide>
       </Main>
@@ -82,10 +103,10 @@ export const getStaticProps = async () => {
   return {
     props: {
       agents,
-      roles
+      roles,
     },
-    revalidate: 3600
-  }
-}
+    revalidate: 3600,
+  };
+};
 
 export default Home;

@@ -50,9 +50,10 @@ export const DashboardTabs = styled.div`
   display: flex;
   height: 30px;
 `
-export const Tab = styled.label<Props>`
+export const Tab = styled.div<Props>`
   width: 300px;
   height: 100%;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
