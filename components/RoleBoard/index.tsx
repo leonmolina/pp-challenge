@@ -13,7 +13,7 @@ import {
 import downIcon from "../../public/chevron-down.svg";
 import { Role } from "../../types/Role";
 import { RoleHeader } from "../partials/RoleHeader";
-import { PermissionsBoard } from "../partials/PermissionsBoard";
+import { PermissionsBoard } from "../PermissionsBoard";
 
 type Props = {
   role: Role;

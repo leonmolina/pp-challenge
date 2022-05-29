@@ -1,9 +1,4 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-
-type Props = {
-  isDisabled?: boolean;
-}
 
 export const Container = styled.div`
   display: flex;
@@ -13,18 +8,12 @@ export const Container = styled.div`
   width: 100%;
   border-bottom: 1px solid #EAEFED;
 `;
-export const AgentItems = styled.div`
+export const PermissionItems = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
 `;
-export const AgentAvatar = styled.img`
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
-  margin-right: 5px;
-`;
-export const AgentItemArea = styled.div`
+export const PermissionItemArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,11 +22,15 @@ export const AgentItemArea = styled.div`
     justify-content: flex-start;
   }
 `;
-export const AgentItemText = styled.span`
+export const PermissionItemText = styled.span`
   font-family: var(--font);
   font-weight: var(--regular);
   color: var(--color-green);
   font-size: 12px;
 `;
-export const AgentCheckbox = styled.div`
+export const PermissionCheckbox = styled.div`
+`
+export const PermissionLabel = styled.label`
+  width: 20px;
+  height: 28px;
 `
