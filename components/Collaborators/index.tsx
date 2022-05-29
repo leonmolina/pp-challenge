@@ -1,37 +1,23 @@
-import { useState } from "react";
-import { CollaboratorsBoard } from "../CollaboratorsBoard";
 import { SearchBar } from "../SearchBar";
 import {
+  CollaboratorsBoard,
   Container,
-  DropdownItem,
-  DropdownMenu,
-  FooterNavButton,
-  FooterNavText,
-  FooterSelect,
-  FooterText,
   ListArea,
   ListContent,
-  ListFooter,
-  ListFooterLeftSide,
-  ListFooterRightSide,
+  ListContentArea,
   ListTitle,
   SearchLabel,
 } from "./styles";
-import arrowLeft from "../../public/chevron-left.svg";
-import arrowRight from "../../public/chevron-right.svg";
-import Image from "next/image";
+import { AgentsFooter } from "../AgentsFooter";
+import { AgentsHeader } from "../AgentsHeader";
+import { Agents } from "../../types/Agents";
+import { CollaboratorCard } from "../CollaboratorCard";
 
-export interface Agents {
-  agent_id: number;
-  name: string;
-  image: string;
-  department: string;
-  branch: string;
-  role: string;
-  status: string;
+type Props = {
+  agents: Agents[]
 }
 
-export const Collaborators = () => {
+export const Collaborators = ({agents}: Props) => {
   return (
     <Container>
       {/* Barra de pesquisa dos Colaboradores */}
@@ -41,71 +27,26 @@ export const Collaborators = () => {
       <ListTitle>Listagem de colaboradores</ListTitle>
 
       <ListArea>
-        <ListContent>
-          <CollaboratorsBoard />
-        </ListContent>
 
-        <ListFooter>
-          <ListFooterLeftSide>
-            <FooterText>Mostrando 10 de 50 registros</FooterText>
-            {/* Select do footer */}
-            <div className="dropdown">
-              <FooterSelect
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                10
-              </FooterSelect>
-              <DropdownMenu
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton1"
-              >
-                <DropdownItem>
-                  <a className="dropdown-item" href="#">
-                    10
-                  </a>
-                </DropdownItem>
-                <DropdownItem>
-                  <a className="dropdown-item" href="#">
-                    20
-                  </a>
-                </DropdownItem>
-                <DropdownItem>
-                  <a className="dropdown-item" href="#">
-                    30
-                  </a>
-                </DropdownItem>
-              </DropdownMenu>
-            </div>
-          </ListFooterLeftSide>
-          <ListFooterRightSide>
+        {/* Conteúdo */}
+        <ListContentArea>
+          
+          <CollaboratorsBoard>
+            <AgentsHeader />
 
-            <FooterNavButton value="prev" className="left">
-              <Image
-                width={24}
-                height={24}
-                src={arrowLeft}
-                alt="Ícone flecha para a esquerda, simbolizando voltar na lista."
-              />
-            </FooterNavButton>
-            
-            <FooterNavText>1 de 10</FooterNavText>
+            <ListContent>
+              {agents?.map((i, k) => (
+                <div key={k}>
+                  <CollaboratorCard agents={i} />
+                </div>
+              )).slice(0, 6)}
+            </ListContent>
+          </CollaboratorsBoard>
+          
+        </ListContentArea>
 
-            <FooterNavButton value="next" className="right">
-            <Image
-                width={24}
-                height={24}
-                src={arrowRight}
-                alt="Ícone flecha para a direita, simbolizando continuar na lista."
-              />
-            </FooterNavButton>
-
-          </ListFooterRightSide>
-
-        </ListFooter>
+        {/* Footer */}
+        <AgentsFooter />
       </ListArea>
     </Container>
   );

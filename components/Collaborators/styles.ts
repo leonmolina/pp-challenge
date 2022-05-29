@@ -25,66 +25,27 @@ export const ListArea = styled.div`
   flex-direction: column;
   padding: 10px;
 `;
-export const ListContent = styled.div`
+export const ListContentArea = styled.div`
   width: 100%;
   max-height: 100%;
   overflow: hidden;
   background-color: #EEE;
 `;
-export const ListFooter = styled.div`
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 24px;
-`;
-export const ListFooterLeftSide = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-export const FooterText = styled.span`
-  font-family: var(--font);
-  font-weight: var(--regular);
-  color: var(--color-green);
-`
-export const FooterSelect = styled.button`
-  padding: 2px 10px;
-  margin: 0 24px ;
-  background-color: #fff;
-  color: var(--color-green);
-  border: 2px solid var(--color-green--light);
-  border-radius: 8px;
-`
-export const DropdownMenu = styled.ul`
-`
-export const DropdownItem = styled.li`
-`
 
-export const ListFooterRightSide = styled.div`
+export const CollaboratorsBoard = styled.div`
+  height: auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-export const FooterNavButton = styled.button`
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 36px;
-  margin: 0 10px;
-  &.left {
-    border: 1.4px solid #CAD6D1;
-    border-radius: 8px 0px 0px 8px;
-  };
-  &.right {
-  border: 1.4px solid #709085;
-  border-radius: 0px 8px 8px 0px;
-  };
-`
-export const FooterNavText = styled.span`
-  font-family: var(--font);
-  font-weight: var(--bold);
-  color: var(--color-green);
-  font-size: 16px;
-`
+`;
+
+export const ListContent = styled.div`
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+`;

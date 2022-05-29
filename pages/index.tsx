@@ -1,10 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Dashboard } from "../components/Dashboard";
+import { useState } from "react";
+import { CollaboratorCard } from "../components/CollaboratorCard";
+import { Collaborators } from "../components/Collaborators";
 import { Header } from "../components/Header";
-import { ContentArea, LeftSide, Main, RightSide, Title, TitleArea } from "./styles";
+import { Roles } from "../components/Roles";
+import { api } from "../services/api";
+import { Agents } from "../types/Agents";
+import { ContentArea, Dashboard, DashboardContent, DashboardTabs, FillerTab, LeftSide, Main, RightSide, Tab, TabTitle, Title, TitleArea } from "./styles";
 
-const Home: NextPage = () => {
+type Props = {
+  agents: Agents[]
+}
+// :NextPage
+const Home = ({agents}: Props) => {
+  const [tabSelected, setTabSelected] = useState(true);
   return (
     <>
       <Head>
@@ -28,7 +38,21 @@ const Home: NextPage = () => {
             </TitleArea>
             
             {/* Conteúdo */}
-            <Dashboard />
+
+            <Dashboard className="container">
+                <DashboardTabs className="container">
+                  <Tab isTabSelected={false}>
+                    <TabTitle isTabSelected={false}>Colaboradores</TabTitle>
+                  </Tab>
+                  <Tab isTabSelected={true}>
+                    <TabTitle isTabSelected={true}>Cargos</TabTitle>
+                  </Tab>
+                  <FillerTab />
+                </DashboardTabs>
+                <DashboardContent className="container">
+                  {tabSelected ? <Collaborators agents={agents} /> : <Roles />}
+                </DashboardContent>
+            </Dashboard>
 
           </ContentArea>
         </RightSide>
@@ -36,5 +60,15 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+export const getStaticProps = async () => {
+  const res = await api.get("/agents")
+  const agents = res.data.items
+  return {
+    props: {
+      agents
+    }
+  }
+}
 
 export default Home;

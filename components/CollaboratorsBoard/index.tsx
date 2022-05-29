@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { Agents } from "../../types/Agents";
+import { AgentsHeader } from "../AgentsHeader";
 import { CollaboratorCard } from "../CollaboratorCard";
-import { Agents } from "../Collaborators";
-import { Container, HeaderItem, HeaderItemTitle, ListContent, ListHeader } from "./styles";
+import { Container, ListContent} from "./styles";
 
 export const CollaboratorsBoard = () => {
 
@@ -18,26 +19,7 @@ export const CollaboratorsBoard = () => {
 
   return (
     <Container>
-      <ListHeader className="row">
-        <HeaderItem className="main col-3">
-          <HeaderItemTitle>Nome Completo</HeaderItemTitle>
-        </HeaderItem>
-        <HeaderItem className="col-2">
-          <HeaderItemTitle>Departamento</HeaderItemTitle>
-        </HeaderItem>
-        <HeaderItem className="col-2">
-          <HeaderItemTitle>Cargo</HeaderItemTitle>
-        </HeaderItem>
-        <HeaderItem className="col-2">
-          <HeaderItemTitle>Unidade</HeaderItemTitle>
-        </HeaderItem>
-        <HeaderItem className="col-2">
-          <HeaderItemTitle>Status</HeaderItemTitle>
-        </HeaderItem>
-        <HeaderItem className="col-1">
-          <HeaderItemTitle></HeaderItemTitle>
-        </HeaderItem>
-      </ListHeader>
+      <AgentsHeader />
 
       <ListContent>
         {agents?.map((i, k) => (
