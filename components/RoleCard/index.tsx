@@ -19,9 +19,10 @@ import trashIcon from '../../public/trash.svg';
 
 type Props = {
   roles: RolesType;
+  index: number;
 };
 
-export const RoleCard = ({ roles }: Props) => {
+export const RoleCard = ({ roles, index }: Props) => {
   return (
     <Container>
       <AgentItems className="row">
@@ -63,7 +64,7 @@ export const RoleCard = ({ roles }: Props) => {
               aria-labelledby="dropdownMenuButton1"
             >
               <MoreOptionsItem>
-                <Options className="dropdown-item" href="#">
+                <Options className="dropdown-item" href={`/cargo/${index}`}>
                   <OptionsIcon>
                     <Image src={eyeIcon} width={24} height={24} alt="Ícone de um olho, para ver a página do colaborador." />
                   </OptionsIcon>

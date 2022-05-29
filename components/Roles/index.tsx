@@ -35,7 +35,7 @@ export const Roles = ({ roles }: Props) => {
 
             {/* Conteúdo */}
             <RolesContent>
-              {roles?.map((i, k) => <RoleCard roles={i} key={k} />).slice(0, 8)}
+              {roles?.map((i, k) => <RoleCard roles={i} index={(k + 1)} key={k} />).slice(0, 8)}
             </RolesContent>
           </RolesBoard>
         </ListContent>
