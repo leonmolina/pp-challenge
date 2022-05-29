@@ -21,30 +21,6 @@ import arrowLeft from "../../public/chevron-left.svg";
 import arrowRight from "../../public/chevron-right.svg";
 import Image from "next/image";
 
-interface Phone {
-  ddd: number;
-  ddi: number;
-  number: number;
-}
-
-interface Document {
-  type: string;
-  number: number;
-}
-
-export interface Agent {
-  id: number;
-  name: string;
-  email: string;
-  phone: Phone;
-  document: Document;
-  birth_date: string;
-  image: string;
-  department: string;
-  branch: string;
-  role: string;
-  status: string;
-}
 export interface Agents {
   agent_id: number;
   name: string;

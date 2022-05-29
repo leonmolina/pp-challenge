@@ -6,7 +6,6 @@ import { Container, HeaderItem, HeaderItemTitle, ListContent, ListHeader } from 
 
 export const CollaboratorsBoard = () => {
 
-  const [agent, setAgent] = useState({});
   const [agents, setAgents] = useState<Agents[]>([]);
 
   useEffect(() => {

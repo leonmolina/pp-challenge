@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { AgentDashboard } from "../../components/AgentDashboard";
-import { Collaborators } from "../../components/Collaborators";
-import { Dashboard } from "../../components/Dashboard";
 import { Header } from "../../components/Header";
 import { ContentArea, LeftSide, Main, RightSide, Title, TitleArea } from "./styles";
 
@@ -30,7 +28,6 @@ const Agent: NextPage = () => {
             </TitleArea>
             
             {/* Conteúdo */}
-            {/* <Dashboard /> */}
             <AgentDashboard />
 
           </ContentArea>

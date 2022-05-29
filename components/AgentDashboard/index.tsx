@@ -1,89 +1,46 @@
 import {
-  AgentAvatar,
-  AgentData,
-  AgentEmail,
-  AgentHeader,
-  AgentInfo,
-  AgentInfoCard,
-  AgentName,
-  AgentOrganizational,
-  AgentOrgCard,
   Container,
   DashboardContent,
-  InfoCardsArea,
-  InfoContent,
-  InfoData,
-  InfoIcon,
-  InfoText,
-  InfoTitle,
-  OrgCardsArea,
-  OrgText,
-  OrgTitle,
 } from "./styles";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import { AgentBoard } from "../AgentBoard";
+
+export interface Agent {
+  id: number;
+  name: string;
+  email: string;
+  phone: {
+    ddd: string;
+    ddi: string;
+    number: string;
+  };
+  document: {
+    type: string;
+    number: string;
+  };
+  birth_date: string;
+  image: string;
+  department: string;
+  branch: string;
+  role: string;
+  status: string;
+}
 
 export const AgentDashboard = () => {
+  const [agent, setAgent] = useState<Agent>({} as Agent);
+  
+  useEffect(() => {
+    const getAgent = async () => {
+      const res = await api.get("/agent/1")
+      setAgent(res.data.agent)
+    }
+    getAgent();
+  }, []);
   return (
     <Container className="container">
       <DashboardContent className="container">
-        <AgentHeader>
-          <AgentAvatar>Imagem</AgentAvatar>
-          <AgentData>
-            <AgentName>Mothra Fernandes</AgentName>
-            <AgentEmail>mothrafernandes@gmail.com</AgentEmail>
-          </AgentData>
-        </AgentHeader>
-
-        <AgentInfo>
-          <InfoTitle>Informações pessoais</InfoTitle>
-
-          <InfoCardsArea>
-            <AgentInfoCard>
-              <InfoIcon>Ícone</InfoIcon>
-              <InfoData>
-                <InfoText>CPF</InfoText>
-                <InfoContent>601 189 760 60</InfoContent>
-              </InfoData>
-            </AgentInfoCard>
-
-            <AgentInfoCard>
-              <InfoIcon>Ícone</InfoIcon>
-              <InfoData>
-                <InfoText>Telefone</InfoText>
-                <InfoContent>+55 89 2635 5467</InfoContent>
-              </InfoData>
-            </AgentInfoCard>
-
-            <AgentInfoCard>
-              <InfoIcon>Ícone</InfoIcon>
-              <InfoData>
-                <InfoText>Nascimento</InfoText>
-                <InfoContent>29/11/1990</InfoContent>
-              </InfoData>
-            </AgentInfoCard>
-          </InfoCardsArea>
-        </AgentInfo>
-
-        <AgentOrganizational>
-          <OrgTitle>Dados organizacionais</OrgTitle>
-
-          <OrgCardsArea>
-            <AgentOrgCard>
-              <OrgText>Departamento</OrgText>
-            </AgentOrgCard>
-
-            <AgentOrgCard>
-              <OrgText>Cargo</OrgText>
-            </AgentOrgCard>
-
-            <AgentOrgCard>
-              <OrgText>Unidade</OrgText>
-            </AgentOrgCard>
-
-            <AgentOrgCard>
-              <OrgText>Status</OrgText>
-            </AgentOrgCard>
-          </OrgCardsArea>
-        </AgentOrganizational>
+        <AgentBoard agent={agent} />
       </DashboardContent>
     </Container>
   );
