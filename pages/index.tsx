@@ -1,7 +1,5 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
-import { CollaboratorCard } from "../components/CollaboratorCard";
 import { Collaborators } from "../components/Collaborators";
 import { Header } from "../components/Header";
 import { Roles } from "../components/Roles";

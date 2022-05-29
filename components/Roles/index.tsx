@@ -1,4 +1,4 @@
-import { SearchBar } from "../SearchBar";
+import { SearchBar } from "../partials/SearchBar";
 import {
   Container,
   ListArea,
@@ -8,10 +8,10 @@ import {
   RolesContent,
   SearchLabel,
 } from "./styles";
-import { RolesFooter } from "../RolesFooter";
+import { RolesFooter } from "../partials/RolesFooter";
 import { RolesType } from "../../types/Roles";
 import { RoleCard } from "../RoleCard";
-import { RolesHeader } from "../RolesHeader";
+import { RolesHeader } from "../partials/RolesHeader";
 
 interface Rules {
   role: string;

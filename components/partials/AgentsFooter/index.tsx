@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { CollaboratorsBoard } from "../CollaboratorsBoard";
-import { SearchBar } from "../SearchBar";
 import {
   Container,
   DropdownItem,
@@ -13,8 +10,8 @@ import {
   ListFooterLeftSide,
   ListFooterRightSide,
 } from "./styles";
-import arrowLeft from "../../public/chevron-left.svg";
-import arrowRight from "../../public/chevron-right.svg";
+import arrowLeft from "../../../public/chevron-left.svg";
+import arrowRight from "../../../public/chevron-right.svg";
 import Image from "next/image";
 
 export const AgentsFooter = () => {

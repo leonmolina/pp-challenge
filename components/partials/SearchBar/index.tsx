@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Container, InputArea, SearchInput } from "./styles";
-import searchIcon from '../../public/magnifying-glass.svg'
+import searchIcon from '../../../public/magnifying-glass.svg'
 import Image from "next/image";
 
 export const SearchBar = () => {

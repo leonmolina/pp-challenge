@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Agent } from "../AgentDashboard";
+import { Agent } from "../../types/Agent";
 import {
   AgentAvatar,
   AgentData,

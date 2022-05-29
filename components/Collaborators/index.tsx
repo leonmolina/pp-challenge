@@ -1,4 +1,4 @@
-import { SearchBar } from "../SearchBar";
+import { SearchBar } from "../partials/SearchBar";
 import {
   CollaboratorsBoard,
   Container,
@@ -8,8 +8,8 @@ import {
   ListTitle,
   SearchLabel,
 } from "./styles";
-import { AgentsFooter } from "../AgentsFooter";
-import { AgentsHeader } from "../AgentsHeader";
+import { AgentsFooter } from "../partials/AgentsFooter";
+import { AgentsHeader } from "../partials/AgentsHeader";
 import { Agents } from "../../types/Agents";
 import { CollaboratorCard } from "../CollaboratorCard";
 
