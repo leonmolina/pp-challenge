@@ -23,6 +23,7 @@ import Image from "next/image";
 import { AgentsType } from "../../types/Agents";
 import eyeIcon from '../../public/eye.svg';
 import trashIcon from '../../public/trash.svg';
+import Link from "next/link";
 
 type Props = {
   agents: AgentsType;
@@ -80,29 +81,27 @@ export const AgentCard = ({ agents }: Props) => {
                 height={124}
               />
             </AgentOptions>
+
             {/* Dropdown items */}
             <MoreOptions
               className="dropdown-menu"
               aria-labelledby="dropdownMenuButton1"
             >
               <MoreOptionsItem>
-                <Options className="dropdown-item" href="#">
+                <Options className="dropdown-item" href={`/agente/${agents.agent_id}`}>
                   <OptionsIcon>
 
                     <Image src={eyeIcon} width={24} height={24} alt="Ícone de um olho, para ver a página do colaborador." />
 
                   </OptionsIcon>
 
-                  <OptionsText>
-                    <OptionsLink href={`/agente/${agents.agent_id}`}>Ver colaborador</OptionsLink>
-                  </OptionsText>
+                  <OptionsText>Ver colaborador</OptionsText>
                 </Options>
               </MoreOptionsItem>
               <MoreOptionsItem>
                 <Options isDisabled className="dropdown-item">
                   <OptionsIcon>
                     <Image src={trashIcon} width={24} height={24} alt="ícone de um lixeiro, para excluir o colaborador."/>
-
                   </OptionsIcon>
                   <OptionsText>Excluir</OptionsText>
                 </Options>
