@@ -68,7 +68,10 @@ export const RoleBoard = ({ role }: Props) => {
       <RoleInfo>
         <InfoTitle>Listagem de permissões</InfoTitle>
       </RoleInfo>
+
+      {/* Header permissões */}
       <RoleHeader />
+      {/* Conteúdo cards de permissões */}
       <RolePermissions>
         <PermissionsBoard />
       </RolePermissions>

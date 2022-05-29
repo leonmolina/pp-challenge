@@ -5,14 +5,17 @@ import {
   Container,
 } from "./styles";
 
+type Props = {
+  role: string;
+}
 
-export const PermissionCard = () => {
+export const PermissionCard = ({role}: Props) => {
   return (
     <Container>
       <AgentItems className="row">
         {/* Cargo */}
-        <AgentItemArea className="col-2">
-          <AgentItemText>Cargo</AgentItemText>
+        <AgentItemArea className="roleName col-6">
+          <AgentItemText>{role}</AgentItemText>
         </AgentItemArea>
 
         {/* Departamento */}
@@ -26,7 +29,7 @@ export const PermissionCard = () => {
         </AgentItemArea>
 
         {/* Opções */}
-        <AgentItemArea className="more col-6">
+        <AgentItemArea className="col-2">
         <AgentItemText>Excluir</AgentItemText>
         </AgentItemArea>
       </AgentItems>

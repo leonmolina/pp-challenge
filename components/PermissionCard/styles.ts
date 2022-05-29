@@ -29,8 +29,8 @@ export const AgentItemArea = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  &.more {
-    justify-content: flex-end;
+  &.roleName {
+    justify-content: flex-start;
   }
 `;
 export const AgentItemText = styled.span`
