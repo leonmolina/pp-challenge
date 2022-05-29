@@ -1,18 +1,27 @@
 import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
-import { AgentDashboard } from "../../components/AgentDashboard";
+import { AgentBoard } from "../../components/AgentBoard";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 import { Agent } from "../../types/Agent";
 import { Agents } from "../../types/Agents";
-import { ContentArea, LeftSide, Main, RightSide, Title, TitleArea } from "./styles";
+import { DashboardContent } from "../styles";
+import {
+  AgentDashboard,
+  ContentArea,
+  LeftSide,
+  Main,
+  RightSide,
+  Title,
+  TitleArea,
+} from "./styles";
 
 type Props = {
   agent: Agent;
-}
+};
 
-const AgentQuery = ({agent}: Props) => {
+const AgentQuery = ({ agent }: Props) => {
   return (
     <>
       <Head>
@@ -22,22 +31,23 @@ const AgentQuery = ({agent}: Props) => {
       </Head>
       <Header />
       <Main className="container-fluid">
-
         {/* Sidebar */}
         <LeftSide className="container" />
 
         {/* Main content */}
         <RightSide className="container">
-
           <ContentArea className="container">
             {/* Título da página */}
             <TitleArea>
               <Title>Detalhes do colaborador</Title>
             </TitleArea>
-            
-            {/* Conteúdo */}
-            <AgentDashboard />
 
+            {/* Conteúdo */}
+            <AgentDashboard className="container">
+              <DashboardContent className="container">
+                <AgentBoard agent={agent} />
+              </DashboardContent>
+            </AgentDashboard>
           </ContentArea>
         </RightSide>
       </Main>
@@ -47,31 +57,33 @@ const AgentQuery = ({agent}: Props) => {
 
 export default AgentQuery;
 
+// Só percebi que não existia rota pra cada um dos agents depois que fiz as static paths.
 export const getStaticPaths = async () => {
-  
   const agentsRes = await api.get("/agents");
   const agents: Agents[] = agentsRes.data.items;
-  
-  const paths = agents.map(agent => ({
-    params: { id: agent.agent_id.toString() }
+
+  const paths = agents.map((agent) => ({
+    params: { id: agent.agent_id.toString() },
   }));
-  return {paths, fallback: false};
-}
+  return { paths, fallback: false };
+};
 
 interface IdParams extends ParsedUrlQuery {
   id: string;
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  
   const { id } = context.params as IdParams;
 
-  const res = await api.get(`/agent/${id}`);
+
+  // const res = await api.get(`/agent/${id}`);   -- se houvesse rota para cada um dos colaboradores.
+  const res = await api.get(`/agent/1`);
+
   const agent = res.data.agent;
 
   return {
     props: {
-      agent
-    }
-  }
-}
+      agent,
+    },
+  };
+};
