@@ -13,17 +13,6 @@ import { RolesType } from "../../types/Roles";
 import { RoleCard } from "../RoleCard";
 import { RolesHeader } from "../partials/RolesHeader";
 
-interface Rules {
-  role: string;
-  permissions: string[];
-}
-
-export interface Role {
-  name: string;
-  departament: string;
-  grouprules: Rules[];
-}
-
 type Props = {
   roles: RolesType[];
 };
