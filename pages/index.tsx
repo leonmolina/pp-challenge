@@ -14,7 +14,7 @@ type Props = {
 }
 // :NextPage
 const Home = ({agents, roles}: Props) => {
-  const [tabSelected, setTabSelected] = useState(true);
+  const [tabSelected, setTabSelected] = useState(false);
   return (
     <>
       <Head>
