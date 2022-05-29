@@ -12,8 +12,9 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const AgentInfo = styled.div`
+export const RoleInfo = styled.div`
   width: 100%;
+  height: auto;
 `
 export const InfoTitle = styled.span`
   font-family: var(--font);
@@ -22,15 +23,16 @@ export const InfoTitle = styled.span`
   font-size: 18px;
 `
 
-export const AgentOrganizational = styled.div`
+export const RoleData = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin: 40px 0;
 `
-export const AgentOrgCard = styled.div`
+export const RoleOrgCard = styled.div`
   width: 420px;
   height: 56px;
-  background-color: #F5FAF8;
+  background-color: #FFF;
   border: 2px solid #CAD6D1;
   border-radius: 8px;
   padding: 20px;
@@ -38,7 +40,7 @@ export const AgentOrgCard = styled.div`
   justify-content: space-between;
   align-items: center;
 `
-export const AgentCardSection = styled.div`
+export const RoleCardSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

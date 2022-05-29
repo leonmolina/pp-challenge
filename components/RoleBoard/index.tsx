@@ -1,13 +1,13 @@
 import Image from "next/image";
 import {
-  AgentCardSection,
-  AgentInfo,
-  AgentOrganizational,
-  AgentOrgCard,
   Container,
   InfoTitle,
   OrgCardText,
   OrgCardTitle,
+  RoleCardSection,
+  RoleData,
+  RoleInfo,
+  RoleOrgCard,
 } from "./styles";
 import downIcon from "../../public/chevron-down.svg";
 import { Role } from "../../types/Role";
@@ -19,18 +19,18 @@ type Props = {
 export const RoleBoard = ({ role }: Props) => {
   return (
     <Container>
-      <AgentInfo>
+      <RoleInfo>
         <InfoTitle>Dados do cargo</InfoTitle>
-      </AgentInfo>
+      </RoleInfo>
 
       {/* Dados do cargo */}
-      <AgentOrganizational>
-        <AgentOrgCard>
-          <AgentCardSection>
+      <RoleData>
+        <RoleOrgCard>
+          <RoleCardSection>
             <OrgCardTitle>Departamento</OrgCardTitle>
             <OrgCardText>{role.department}</OrgCardText>
-          </AgentCardSection>
-          <AgentCardSection>
+          </RoleCardSection>
+          <RoleCardSection>
             <Image
               src={downIcon}
               width={24}
@@ -39,15 +39,15 @@ export const RoleBoard = ({ role }: Props) => {
                 "Ícone de flecha apontando para baixo, indicando que há opções."
               }
             />
-          </AgentCardSection>
-        </AgentOrgCard>
+          </RoleCardSection>
+        </RoleOrgCard>
 
-        <AgentOrgCard>
-          <AgentCardSection>
+        <RoleOrgCard>
+          <RoleCardSection>
             <OrgCardTitle>Cargo</OrgCardTitle>
             <OrgCardText>{role.name}</OrgCardText>
-          </AgentCardSection>
-          <AgentCardSection>
+          </RoleCardSection>
+          <RoleCardSection>
             <Image
               src={downIcon}
               width={24}
@@ -56,11 +56,15 @@ export const RoleBoard = ({ role }: Props) => {
                 "Ícone de flecha apontando para baixo, indicando que há opções."
               }
             />
-          </AgentCardSection>
-        </AgentOrgCard>
-      </AgentOrganizational>
+          </RoleCardSection>
+        </RoleOrgCard>
+      </RoleData>
 
       {/* Área do board */}
+
+      <RoleInfo>
+        <InfoTitle>Listagem de permissões</InfoTitle>
+      </RoleInfo>
     
     </Container>
   );
