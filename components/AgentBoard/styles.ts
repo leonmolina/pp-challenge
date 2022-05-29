@@ -117,21 +117,36 @@ export const OrgTitle = styled.span`
 `
 export const OrgCardsArea = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
   margin-top: 24px;
+  gap: 24px;
 `
 export const AgentOrgCard = styled.div`
-  width: 392px;
-  height: 50px;
+  width: 380px;
+  height: 56px;
   background-color: #F5FAF8;
   border: 2px solid #CAD6D1;
   border-radius: 8px;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
-export const OrgText = styled.span`
+export const AgentCardSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`
+export const OrgCardTitle = styled.span`
+  font-family: var(--font);
+  font-weight: var(--medium);
+  color: var(--color-light);
+  font-size: 14px;
+`
+export const OrgCardText = styled.span`
   font-family: var(--font);
   font-weight: var(--medium);
   color: var(--color-green);

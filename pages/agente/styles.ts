@@ -49,7 +49,7 @@ export const ContentArea = styled.div`
 `
 export const AgentDashboard = styled.div`
   background-color: #fff;
-  height: 600px;
+  height: auto;
   border-radius: 10px;
   padding: 40px 24px 40px 24px;
   box-shadow: 0px 4px 8px 0px rgba(165, 171, 179, 0.16);

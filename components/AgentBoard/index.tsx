@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Agent } from "../../types/Agent";
 import {
   AgentAvatar,
+  AgentCardSection,
   AgentData,
   AgentEmail,
   AgentHeader,
@@ -18,12 +19,14 @@ import {
   InfoText,
   InfoTitle,
   OrgCardsArea,
-  OrgText,
+  OrgCardText,
+  OrgCardTitle,
   OrgTitle,
 } from "./styles";
 import idIcon from "../../public/id.svg";
 import phoneIcon from "../../public/phone-call.svg";
 import dateIcon from "../../public/calendar.svg";
+import downIcon from "../../public/chevron-down.svg";
 
 type Props = {
   agent: Agent;
@@ -54,7 +57,7 @@ export const AgentBoard = ({ agent }: Props) => {
         <InfoCardsArea>
           <AgentInfoCard>
             <InfoIcon>
-              <Image src={idIcon} alt={"Ícone simbolizando um documento."} />
+              <Image src={idIcon} width={18} height={18} alt={"Ícone simbolizando um documento."} />
             </InfoIcon>
             <InfoData>
               <InfoText>{agent.document.type}</InfoText>
@@ -64,7 +67,7 @@ export const AgentBoard = ({ agent }: Props) => {
 
           <AgentInfoCard>
             <InfoIcon>
-              <Image src={phoneIcon} alt={"Ícone simbolizando um telefone."} />
+              <Image src={phoneIcon} width={18} height={18} alt={"Ícone simbolizando um telefone."} />
             </InfoIcon>
             <InfoData>
               <InfoText>Telefone</InfoText>
@@ -74,7 +77,7 @@ export const AgentBoard = ({ agent }: Props) => {
 
           <AgentInfoCard>
             <InfoIcon>
-              <Image src={dateIcon} alt={"Ícone simbolizando um calendário."} />
+              <Image src={dateIcon} width={18} height={18} alt={"Ícone simbolizando um calendário."} />
             </InfoIcon>
             <InfoData>
               <InfoText>Nascimento</InfoText>
@@ -88,21 +91,50 @@ export const AgentBoard = ({ agent }: Props) => {
         <OrgTitle>Dados organizacionais</OrgTitle>
 
         <OrgCardsArea>
-          <AgentOrgCard>
-            <OrgText>Departamento</OrgText>
-          </AgentOrgCard>
 
-          <AgentOrgCard>
-            <OrgText>Cargo</OrgText>
-          </AgentOrgCard>
+            <AgentOrgCard>
+              <AgentCardSection>
+              <OrgCardTitle>Departamento</OrgCardTitle>
+              <OrgCardText>{agent.department}</OrgCardText>
+              </AgentCardSection>
+              <AgentCardSection>
+                <Image src={downIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
+              </AgentCardSection>
+            </AgentOrgCard>
 
-          <AgentOrgCard>
-            <OrgText>Unidade</OrgText>
-          </AgentOrgCard>
+            <AgentOrgCard>
+              <AgentCardSection>
+                <OrgCardTitle>Cargo</OrgCardTitle>
+                <OrgCardText>{agent.role}</OrgCardText>
+              </AgentCardSection>
+              <AgentCardSection>
+                <Image src={downIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
+              </AgentCardSection>
+            </AgentOrgCard>
 
-          <AgentOrgCard>
-            <OrgText>Status</OrgText>
-          </AgentOrgCard>
+            <AgentOrgCard>
+              <AgentCardSection>
+                <OrgCardTitle>Unidade</OrgCardTitle>
+                <OrgCardText>{agent.branch}</OrgCardText>
+              </AgentCardSection>
+              <AgentCardSection>
+                <Image src={downIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
+              </AgentCardSection>
+            </AgentOrgCard>
+
+            <AgentOrgCard>
+              <AgentCardSection>
+                <OrgCardTitle>Status</OrgCardTitle>
+                <OrgCardText>
+                  {agent.status === 'inactive' ? 'Inativo' : 'Ativo' }
+                </OrgCardText>
+              </AgentCardSection>
+              <AgentCardSection>
+                <Image src={downIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
+              </AgentCardSection>
+            </AgentOrgCard>
+
+
         </OrgCardsArea>
       </AgentOrganizational>
     </Container>
