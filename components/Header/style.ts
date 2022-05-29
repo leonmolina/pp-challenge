@@ -6,6 +6,11 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #EAEFED;
+  @media(max-width: 800px) {
+    height: 60px;
+    flex-direction: row-reverse;
+    position: relative;
+  }
 `;
 export const LogoArea = styled.div`
   width: 100px;
@@ -14,6 +19,10 @@ export const LogoArea = styled.div`
   justify-content: center;
   align-items: center;
   border-right: 1px solid #EAEFED;
+  @media(max-width: 800px) {
+    border: none;
+    width: 100%;
+  };
 `;
 export const UserArea = styled.div`
   width: 200px;
@@ -22,6 +31,13 @@ export const UserArea = styled.div`
   justify-content: center;
   align-items: center;
   border-left: 1px solid #EAEFED;
+  @media(max-width: 800px) {
+    border: none;
+    width: 100px;
+    position: absolute;
+    align-self: flex-end;
+    left: 0;
+  };
 `;
 export const UserAvatar = styled.div`
   width: 40px;
@@ -46,10 +62,16 @@ export const UserName = styled.span`
   font-size: 14px;
   font-family: var(--font);
   font-weight: var(--bold);
+  @media(max-width: 800px) {
+    display: none;
+  };
 `;
 export const UserData = styled.span`
   font-size: 12px;
   color: #555;
   font-family: var(--font);
   font-weight: var(--regular);
+  @media(max-width: 800px) {
+    display: none;
+  };
 `;

@@ -17,12 +17,10 @@ export const Header = () => {
     <Container>
       <LogoArea>
         <Link href="/">
-          <a style={{ display: "flex" }}>
             <Image
               src={logo}
               alt="Logo da Pedido Pago (duas letras 'P', uma sobrepondo a outra"
             />
-          </a>
         </Link>
       </LogoArea>
       <UserArea>
