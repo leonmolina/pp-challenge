@@ -15,6 +15,9 @@ export const LeftSide = styled.div`
   background-color: #FFF;
   box-shadow: 0px 4px 8px 0px rgba(165, 171, 179, 0.16);
   border: 1px solid #EAEFED;
+  @media(max-width: 800px) {
+    display: none;
+  };
 `
 export const RightSide = styled.div`
   height: auto;
@@ -25,6 +28,9 @@ export const RightSide = styled.div`
 `
 export const TitleArea = styled.div`
   width: 100%;
+  @media(max-width: 800px) {
+    display: none;
+  };
 `
 export const Title = styled.h2`
   font-family: var(--font);
@@ -45,10 +51,16 @@ export const Dashboard = styled.div`
   box-shadow: 0px 4px 8px 0px rgba(165, 171, 179, 0.16);
   display: flex;
   flex-direction: column;
+  @media(max-width: 800px) {
+    width: 100%;
+  };
 `
 export const DashboardTabs = styled.div`
   display: flex;
   height: 30px;
+  @media(max-width: 800px) {
+    display: none;
+  };
 `
 export const Tab = styled.div<Props>`
   width: 300px;
