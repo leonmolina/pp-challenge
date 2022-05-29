@@ -1,5 +1,6 @@
 import { SearchBar } from "../partials/SearchBar";
 import {
+  CardLink,
   CollaboratorsBoard,
   Container,
   ListArea,
@@ -12,6 +13,7 @@ import { AgentsFooter } from "../partials/AgentsFooter";
 import { AgentsHeader } from "../partials/AgentsHeader";
 import { Agents } from "../../types/Agents";
 import { CollaboratorCard } from "../CollaboratorCard";
+import Link from "next/link";
 
 type Props = {
   agents: Agents[]
@@ -36,7 +38,11 @@ export const Collaborators = ({agents}: Props) => {
 
             <ListContent>
               {agents?.map((i, k) => (
-                  <CollaboratorCard agents={i} key={k} />
+                  <Link key={k} href={`/agente/${i.agent_id}`}>
+                    <CardLink>
+                      <CollaboratorCard agents={i} />
+                    </CardLink>
+                  </Link>
               )).slice(0, 6)}
             </ListContent>
           </CollaboratorsBoard>

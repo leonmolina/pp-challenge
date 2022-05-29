@@ -49,3 +49,13 @@ export const ListContent = styled.div`
   height: auto;
   overflow: hidden;
 `;
+
+export const CardLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+`

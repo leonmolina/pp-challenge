@@ -52,7 +52,9 @@ const Home = ({agents, roles}: Props) => {
                 
                 {/* Conteúdo */}
                 <DashboardContent className="container">
+
                   {tabSelected ? <Collaborators agents={agents} /> : <Roles roles={roles} />}
+                  
                 </DashboardContent>
 
             </Dashboard>
