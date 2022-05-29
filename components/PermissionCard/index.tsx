@@ -1,9 +1,13 @@
 import {
+  AgentCheckbox,
   AgentItemArea,
   AgentItems,
   AgentItemText,
   Container,
 } from "./styles";
+import checkedIcon from '../../public/checkbox-checked.svg';
+import uncheckedIcon from '../../public/checkbox-unchecked.svg';
+import Image from "next/image";
 
 type Props = {
   role: string;
@@ -20,17 +24,23 @@ export const PermissionCard = ({role}: Props) => {
 
         {/* Departamento */}
         <AgentItemArea className="col-2">
-          <AgentItemText>Ler</AgentItemText>
+          <AgentCheckbox>
+            <Image src={checkedIcon} alt="Ícone de selecionado" />
+          </AgentCheckbox>
         </AgentItemArea>
 
         {/* Colaboradores */}
         <AgentItemArea className="col-2">
-          <AgentItemText>Editar</AgentItemText>
+          <AgentCheckbox>
+            <Image src={uncheckedIcon} alt="Ícone de selecionado" />
+          </AgentCheckbox>
         </AgentItemArea>
 
         {/* Opções */}
         <AgentItemArea className="col-2">
-        <AgentItemText>Excluir</AgentItemText>
+        <AgentCheckbox>
+          <Image src={checkedIcon} alt="Ícone de selecionado" />
+        </AgentCheckbox>
         </AgentItemArea>
       </AgentItems>
     </Container>

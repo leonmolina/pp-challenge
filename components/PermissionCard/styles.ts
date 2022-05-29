@@ -39,3 +39,5 @@ export const AgentItemText = styled.span`
   color: var(--color-green);
   font-size: 12px;
 `;
+export const AgentCheckbox = styled.div`
+`
