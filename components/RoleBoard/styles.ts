@@ -35,7 +35,7 @@ export const RoleOrgCard = styled.div`
   background-color: #FFF;
   border: 2px solid #CAD6D1;
   border-radius: 8px;
-  padding: 20px;
+  padding: 20px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,17 +45,24 @@ export const RoleCardSection = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  position: relative;
 `
 export const OrgCardTitle = styled.span`
   font-family: var(--font);
   font-weight: var(--medium);
   color: var(--color-light);
   font-size: 14px;
+  position: absolute;
+  top: -25px;
+  background-color: #fff;
+  padding: 0 3px;
 `
 export const OrgCardText = styled.span`
   font-family: var(--font);
   font-weight: var(--medium);
   color: var(--color-green);
+  font-size: 16px;
+  line-height: 24px;
 `
 export const RolePermissions = styled.div`
   width: 100%;

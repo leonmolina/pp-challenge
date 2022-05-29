@@ -139,12 +139,17 @@ export const AgentCardSection = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  position: relative;
 `
 export const OrgCardTitle = styled.span`
   font-family: var(--font);
   font-weight: var(--medium);
   color: var(--color-light);
   font-size: 14px;
+  position: absolute;
+  top: -25px;
+  background-color: #fff;
+  padding: 0 3px;
 `
 export const OrgCardText = styled.span`
   font-family: var(--font);

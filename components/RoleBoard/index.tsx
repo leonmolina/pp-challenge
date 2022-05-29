@@ -33,32 +33,12 @@ export const RoleBoard = ({ role }: Props) => {
             <OrgCardTitle>Departamento</OrgCardTitle>
             <OrgCardText>{role.department}</OrgCardText>
           </RoleCardSection>
-          <RoleCardSection>
-            <Image
-              src={downIcon}
-              width={24}
-              height={24}
-              alt={
-                "Ícone de flecha apontando para baixo, indicando que há opções."
-              }
-            />
-          </RoleCardSection>
         </RoleOrgCard>
 
         <RoleOrgCard>
           <RoleCardSection>
             <OrgCardTitle>Cargo</OrgCardTitle>
             <OrgCardText>{role.name}</OrgCardText>
-          </RoleCardSection>
-          <RoleCardSection>
-            <Image
-              src={downIcon}
-              width={24}
-              height={24}
-              alt={
-                "Ícone de flecha apontando para baixo, indicando que há opções."
-              }
-            />
           </RoleCardSection>
         </RoleOrgCard>
       </RoleData>
