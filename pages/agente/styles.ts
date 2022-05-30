@@ -35,8 +35,8 @@ export const TitleArea = styled.div`
   };
 `
 export const TitleBackButton = styled.a`
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;

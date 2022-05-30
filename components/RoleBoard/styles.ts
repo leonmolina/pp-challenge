@@ -10,11 +10,17 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media(max-width: 800px) {
+    max-width: 100vw;
+  };
 `;
 
 export const RoleInfo = styled.div`
   width: 100%;
   height: auto;
+  @media(max-width: 800px) {
+    margin-bottom: 24px;
+  };
 `
 export const InfoTitle = styled.span`
   font-family: var(--font);
@@ -28,6 +34,10 @@ export const RoleData = styled.div`
   width: 100%;
   justify-content: space-between;
   margin: 40px 0;
+  @media(max-width: 800px) {
+    flex-direction: column;
+  margin: 0;
+  };
 `
 export const RoleOrgCard = styled.div`
   width: 420px;
@@ -39,6 +49,10 @@ export const RoleOrgCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media(max-width: 800px) {
+    width: 100%;
+    margin-bottom: 24px;
+  };
 `
 export const RoleCardSection = styled.div`
   display: flex;
@@ -67,4 +81,7 @@ export const OrgCardText = styled.span`
 export const RolePermissions = styled.div`
   width: 100%;
   height: auto;
+  @media(max-width: 800px) {
+    width: 100%;
+  };
 `
