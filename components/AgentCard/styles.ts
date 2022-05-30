@@ -127,7 +127,7 @@ export const AgentItemArea = styled.div<Props>`
   justify-content: center;
   align-items: center;
   &.more {
-    justify-content: flex-end;
+    justify-content: center;
   }
   @media (max-width: 800px) {
     width: 50%;
