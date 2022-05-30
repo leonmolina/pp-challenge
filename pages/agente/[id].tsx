@@ -7,7 +7,7 @@ import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 import { Agent } from "../../types/Agent";
 import { AgentsType } from "../../types/Agents";
-import { DashboardContent } from "../styles";
+import { DashboardContent } from "../../styles/styles";
 import {
   AgentDashboard,
   ContentArea,
@@ -17,7 +17,7 @@ import {
   Title,
   TitleArea,
   TitleBackButton,
-} from "./styles";
+} from "../../styles/agent-styles";
 import backButton from "../../public/arrow-left.svg";
 import Link from "next/link";
 

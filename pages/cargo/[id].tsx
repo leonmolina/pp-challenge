@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ParsedUrlQuery } from "querystring";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
-import { DashboardContent } from "../styles";
+import { DashboardContent } from "../../styles/styles";
 import {
   AgentDashboard,
   ContentArea,
@@ -14,7 +14,7 @@ import {
   Title,
   TitleArea,
   TitleBackButton,
-} from "./styles";
+} from "../../styles/role-styles";
 import backButton from "../../public/arrow-left.svg";
 import Link from "next/link";
 import { Role } from "../../types/Role";

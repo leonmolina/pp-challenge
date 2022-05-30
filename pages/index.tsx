@@ -21,7 +21,7 @@ import {
   TabTitle,
   Title,
   TitleArea,
-} from "./styles";
+} from "../styles/styles";
 import { TabsDropdown } from "../components/partials/TabsDropdown";
 
 type Props = {
@@ -109,6 +109,8 @@ const Home = ({ agents, roles }: Props) => {
   );
 };
 
+export default Home;
+
 export const getStaticProps = async () => {
   const agentsRes = await api.get("/agents");
   const rolesRes = await api.get("/roles");
@@ -123,4 +125,3 @@ export const getStaticProps = async () => {
   };
 };
 
-export default Home;
