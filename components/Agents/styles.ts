@@ -4,9 +4,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 100%;
+  max-width: 100vw;
   @media(max-width: 800px) {
     border: none;
+    max-width: 100vw;
   };
 `;
 export const SearchLabel = styled.label`

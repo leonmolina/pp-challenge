@@ -25,6 +25,9 @@ export const RightSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media(max-width: 800px) {
+    max-width: 100%;
+  };
 `
 export const TitleArea = styled.div`
   width: 100%;
@@ -41,6 +44,9 @@ export const Title = styled.h2`
 export const ContentArea = styled.div`
   width: 956px;
   margin: 56px 0 80px 0;
+  @media(max-width: 800px) {
+    max-width: 100vw;
+  };
 `
 
 export const Dashboard = styled.div`
@@ -52,7 +58,7 @@ export const Dashboard = styled.div`
   display: flex;
   flex-direction: column;
   @media(max-width: 800px) {
-    width: 100%;
+    max-width: 100vw;
   };
 `
 export const DashboardTabs = styled.div`
@@ -88,4 +94,5 @@ export const TabTitle = styled.h3<Props>`
   `};
 `
 export const DashboardContent = styled.div`
+  max-width: 100vw;
 `

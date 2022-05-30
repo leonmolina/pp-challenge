@@ -23,7 +23,6 @@ import Image from "next/image";
 import { AgentsType } from "../../types/Agents";
 import eyeIcon from '../../public/eye.svg';
 import trashIcon from '../../public/trash.svg';
-import Link from "next/link";
 
 type Props = {
   agents: AgentsType;
@@ -38,7 +37,7 @@ export const AgentCard = ({ agents }: Props) => {
             <AgentAvatar src={agents.image} />
           </MainAreaLeftSide>
           <MainAreaRightSide>
-            <AgentItemText>{agents.name}</AgentItemText>
+            <AgentItemText className="mainName">{agents.name}</AgentItemText>
           </MainAreaRightSide>
         </AgentMainArea>
 

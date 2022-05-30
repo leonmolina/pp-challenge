@@ -7,6 +7,9 @@ export const Container = styled.div`
   border: 2px solid var(--color-green--light);
   margin: 40px 0 0 0;
   position: relative;
+  @media(max-width: 800px) {
+    max-width: 100vw;
+  };
 `
 export const InputArea = styled.div`
   display: flex;
@@ -27,7 +30,10 @@ export const SearchInput = styled.input`
     font-weight: var(--medium);
     color: var(--color-green);
     font-size: 16px;
-  }
+  };
+  @media(max-width: 800px) {
+    max-width: 100;
+  };
 `;
 export const SearchLabel = styled.label`
   font-family: var(--font);

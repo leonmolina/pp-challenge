@@ -6,7 +6,7 @@ import {
 
 export const AgentsHeader = () => {
   return (
-        <ListHeader className="row">
+      <ListHeader className="row">
         <HeaderItem className="main col-3">
           <HeaderItemTitle>Nome Completo</HeaderItemTitle>
         </HeaderItem>

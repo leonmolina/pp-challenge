@@ -12,6 +12,11 @@ export const Container = styled.div`
   height: 70px;
   width: 100%;
   border-bottom: 1px solid #EAEFED;
+  @media(max-width: 800px) {
+    height: 400px;
+    padding: 24px 16px;
+    flex-wrap: wrap;
+  };
 `;
 export const AgentItems = styled.div`
   width: 100%;
@@ -28,7 +33,12 @@ export const AgentMainArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 0;
+  padding: 0;
+  @media(max-width: 800px) {
+    width: 100%;
+    height: 100px;
+    justify-content: flex-start;
+  };
 `;
 export const MainAreaLeftSide = styled.div`
   width: 30%;
@@ -36,6 +46,10 @@ export const MainAreaLeftSide = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media(max-width: 800px) {
+    justify-content: flex-start;
+    width: auto;
+  };
 `;
 export const MainAreaRightSide = styled.div`
   width: 70%;
@@ -50,13 +64,19 @@ export const AgentItemArea = styled.div`
   align-items: center;
   &.more {
     justify-content: flex-end;
-  }
+  };
+  @media(max-width: 800px) {
+    width: 50%;
+  };
 `;
 export const AgentItemText = styled.span`
   font-family: var(--font);
   font-weight: var(--regular);
   color: var(--color-green);
   font-size: 12px;
+  &.mainName{
+    font-weight: var(--bold);
+  }
 `;
 export const AgentStatus = styled.div``;
 export const AgentOptions = styled.div`
