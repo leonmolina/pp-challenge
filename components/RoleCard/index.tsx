@@ -88,7 +88,6 @@ export const RoleCard = ({ roles, index }: Props) => {
         {/* Opções */}
         <AgentItemArea show={show} className="more col-6">
 
-
         {/* Web */}
           <OptionsWeb>
             
@@ -97,7 +96,7 @@ export const RoleCard = ({ roles, index }: Props) => {
 
           {/* Mobile */}
           <OptionsMobile>
-            <OptionsDropdown role>
+            <OptionsDropdown role path={`/cargo/${index}`}>
               <>
                 <Image
                   src={pageIcon}

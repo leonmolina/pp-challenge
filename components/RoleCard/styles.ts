@@ -54,6 +54,7 @@ export const AgentItemArea = styled.div<Props>`
     width: ${props => props.show == "none" ? "33%" : "37.5%"};
     position: relative;
     justify-content: center;
+    align-items: flex-start;
     display: ${props => props.show == "none" ? "none" : "flex"};
     
     &.more {
@@ -139,6 +140,12 @@ export const OptionsMobile = styled.div`
   @media (min-width: 800px) {
       display: none;
     } ;
+    @media (max-width: 800px) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } ;
 `
 export const FooterMobileText = styled.span`
   font-family: (--font);
@@ -170,9 +177,10 @@ export const CardItemTitle = styled.span<Props>`
     background-color: #fff;
     top: -52px;
     width: 120px;
-    text-align: center;
+    align-items: flex-start;
     &.header {
       position: static;
+    align-items: flex-start;
     }
   } ;
 `;
@@ -184,6 +192,6 @@ export const MobileHeader = styled.div<Props>`
     display: ${props => props.show == "none" ? 'flex' : "none"};
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   } ;
 `

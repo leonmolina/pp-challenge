@@ -44,11 +44,12 @@ export const OptionsIcon = styled.div`
   justify-content: center;
   align-items: center;
 `
-export const OptionsText = styled.div`
+export const OptionsText = styled.div<Props>`
   width: 80%;
   font-family: var(--font);
-  color: var(--color-green);
+  color: ${props => props.isDisabled ? 'var(--color-green--light)' : 'var(--color-green)'};
   font-size: 16px;
+  
 `
 export const OptionsLink = styled.a`
   text-decoration: none;

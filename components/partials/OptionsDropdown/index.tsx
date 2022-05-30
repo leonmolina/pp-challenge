@@ -11,6 +11,9 @@ import {
 import eyeIcon from "../../../public/eye.svg";
 import trashIcon from "../../../public/trash.svg";
 import moreVertical from "../../../public/more-vertical.svg";
+import repeatIcon from "../../../public/repeat.svg";
+import duplicateIcon from "../../../public/duplicate.svg";
+import editIcon from "../../../public/edit.svg";
 
 type Props = {
   children?: JSX.Element;
@@ -30,9 +33,9 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
       >
         {children}
 
-        {icon &&
+        {icon && (
           // Três pontos verticais
-          <div className="icon" style={{width: 24, height: 24}}>
+          <div className="icon" style={{ width: 24, height: 24 }}>
             <Image
               src={moreVertical}
               alt="Botão de mais opções"
@@ -40,9 +43,7 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
               height={24}
             />
           </div>
-        
-        }
-        
+        )}
       </AgentOptions>
 
       {/* Dropdown items */}
@@ -51,8 +52,16 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
         aria-labelledby="dropdownMenuButton1"
       >
         <MoreOptionsItem>
+          {role ? (
+            // Cargo
 
-          {path ?
+            <div></div>
+          ) : (
+            // Colaborador
+            <div></div>
+          )}
+
+          {path ? (
             <Options className="dropdown-item" href={path}>
               <OptionsIcon>
                 <Image
@@ -64,12 +73,12 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
               </OptionsIcon>
 
               <OptionsText>
-                {role ? 'Ver cargo' : 'Ver colaborador'
-                }
-                </OptionsText>
+                {role ? "Ver cargo" : "Ver colaborador"}
+              </OptionsText>
             </Options>
-              :
-              <Options className="dropdown-item" href={'#'}>
+          ) : (
+            // Sem path
+            <Options className="dropdown-item" href={"#"}>
               <OptionsIcon>
                 <Image
                   src={eyeIcon}
@@ -80,26 +89,66 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
               </OptionsIcon>
 
               <OptionsText>
-                {role ? 'Ver cargo' : 'Ver colaborador'
-                }
-                </OptionsText>
+                {role ? "Ver cargo" : "Ver colaborador"}
+              </OptionsText>
             </Options>
-          }
-
-
+          )}
         </MoreOptionsItem>
         <MoreOptionsItem>
-          <Options isDisabled className="dropdown-item">
-            <OptionsIcon>
-              <Image
-                src={trashIcon}
-                width={24}
-                height={24}
-                alt="ícone de um lixeiro, para excluir o colaborador."
-              />
-            </OptionsIcon>
-            <OptionsText>Excluir</OptionsText>
-          </Options>
+          {role ? (
+            <>
+              {/* Editar */}
+              <Options isDisabled className="dropdown-item">
+                <OptionsIcon>
+                  <Image
+                    src={editIcon}
+                    width={24}
+                    height={24}
+                    alt="ícone de um lixeiro, para excluir o colaborador."
+                  />
+                </OptionsIcon>
+                <OptionsText isDisabled>Editar</OptionsText>
+              </Options>
+
+              {/* Duplicar */}
+              <Options isDisabled className="dropdown-item">
+                <OptionsIcon>
+                  <Image
+                    src={duplicateIcon}
+                    width={24}
+                    height={24}
+                    alt="ícone de um lixeiro, para excluir o colaborador."
+                  />
+                </OptionsIcon>
+                <OptionsText isDisabled>Duplicar</OptionsText>
+              </Options>
+
+              {/* Exluir */}
+              <Options isDisabled className="dropdown-item">
+                <OptionsIcon>
+                  <Image
+                    src={repeatIcon}
+                    width={24}
+                    height={24}
+                    alt="ícone de um lixeiro, para excluir o colaborador."
+                  />
+                </OptionsIcon>
+                <OptionsText isDisabled>Excluir</OptionsText>
+              </Options>
+            </>
+          ) : (
+            <Options isDisabled className="dropdown-item">
+              <OptionsIcon>
+                <Image
+                  src={trashIcon}
+                  width={24}
+                  height={24}
+                  alt="ícone de um lixeiro, para excluir o colaborador."
+                />
+              </OptionsIcon>
+              <OptionsText isDisabled>Excluir</OptionsText>
+            </Options>
+          )}
         </MoreOptionsItem>
       </MoreOptions>
     </Container>
