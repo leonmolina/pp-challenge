@@ -89,6 +89,7 @@ export const AgentItemText = styled.span`
   font-weight: var(--regular);
   color: var(--color-green);
   font-size: 12px;
+  text-align: center;
 `;
 export const AgentOptions = styled.div`
   display: flex;

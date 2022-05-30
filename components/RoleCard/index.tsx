@@ -90,7 +90,7 @@ export const RoleCard = ({ roles, index }: Props) => {
 
         {/* Web */}
           <OptionsWeb>
-            <OptionsDropdown icon role />
+            <OptionsDropdown icon role path={`/cargo/${index}`} />
           </OptionsWeb>
 
           {/* Mobile */}

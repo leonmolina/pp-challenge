@@ -110,7 +110,7 @@ export const AgentCard = ({ agents }: Props) => {
 
           {/* Web */}
           <OptionsWeb>
-          <OptionsDropdown icon />
+          <OptionsDropdown icon path={`/agente/${agents.agent_id}`} />
           </OptionsWeb>
 
           {/* Mobile */}
