@@ -19,6 +19,7 @@ export const LogoArea = styled.div`
   justify-content: center;
   align-items: center;
   border-right: 1px solid #EAEFED;
+  cursor: pointer;
   @media(max-width: 800px) {
     border: none;
     width: 100%;
