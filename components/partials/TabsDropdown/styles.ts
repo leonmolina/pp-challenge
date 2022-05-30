@@ -25,7 +25,7 @@ export const OptionsHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 4px 10px;
 `
 export const OptionsHeaderText = styled.span`
   font-family: var(--font);

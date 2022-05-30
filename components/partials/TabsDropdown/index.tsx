@@ -19,7 +19,6 @@ type Props = {
 }
 
 export const TabsDropdown = ({set}: Props) => {
-  const [tab, setTab] = useState('agents')
   const [tabTitle, setTabTitle] = useState('Colaboradores')
 
   const handleSelect = (page: string) => {
@@ -28,7 +27,6 @@ export const TabsDropdown = ({set}: Props) => {
     } else {
       setTabTitle('Cargos')
     }
-    setTab(page)
     set(page)
   }
 
