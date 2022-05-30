@@ -6,6 +6,7 @@ import {
   CardItemTitle,
   Container,
   FooterMobileText,
+  MobileHeader,
   OptionsMobile,
   OptionsWeb,
 } from "./styles";
@@ -57,7 +58,11 @@ export const RoleCard = ({ roles, index }: Props) => {
 
 
 
-        <AgentItemArea className="mobile col-2">
+        <AgentItemArea show={show} className="mobile col-2">
+          <MobileHeader show={show}>
+            <CardItemTitle show={show} className="header">Cargo</CardItemTitle>
+            <AgentItemText>{roles.name}</AgentItemText>
+          </MobileHeader>
           <AgentExpandButton
             onClick={handleCardOpen}
             style={{ cursor: "pointer" }}
@@ -81,7 +86,7 @@ export const RoleCard = ({ roles, index }: Props) => {
         </AgentItemArea>
 
         {/* Opções */}
-        <AgentItemArea className="more col-6">
+        <AgentItemArea show={show} className="more col-6">
 
 
         {/* Web */}

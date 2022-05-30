@@ -14,12 +14,13 @@ export const Container = styled.div<Props>`
   width: 100%;
   border-bottom: 1px solid #EAEFED;
   @media (max-width: 800px) {
-    height: ${props => props.show == "none" ? '90px' : "400px"};
+    height: ${props => props.show == "none" ? '90px' : "250px"};
     flex-wrap: wrap;
     border: 2px solid ${props => props.show == "none" ? 'var(--color-grey)' : "var(--color-blue)"};;
     border-radius: 8px;
     margin-bottom: 12px;
     margin-top: 12px;
+    justify-content: flex-s;
     padding:  ${props => props.show == "none" ? '16px 16px' : "16px 24px"};
 
   }
@@ -29,7 +30,8 @@ export const AgentItems = styled.div<Props>`
   height: 100%;
   display: flex;
   @media (max-width: 800px) {
-    justify-content: ${props => props.show == "none" ? 'flex-end' : "space-between"};
+    width: 100%;
+    justify-content: ${props => props.show == "none" ? 'space-between' : "flex-start"};
 ;
     position: relative;
   } ;
@@ -49,7 +51,7 @@ export const AgentItemArea = styled.div<Props>`
     justify-content: center;
   }
   @media (max-width: 800px) {
-    width: 33%;
+    width: ${props => props.show == "none" ? "33%" : "37.5%"};
     position: relative;
     justify-content: center;
     display: ${props => props.show == "none" ? "none" : "flex"};
@@ -66,7 +68,12 @@ export const AgentItemArea = styled.div<Props>`
   };
   &.mobile {
    @media (max-width: 800px) {
-     display: block;
+     display: flex;
+     flex-direction: row;
+     justify-content: ${props => props.show == "none" ? "space-between" : "flex-end"};
+     align-items: center;
+     padding: 0;
+     width: ${props => props.show == "none" ? "100%" : "25%"};
    } ;
    @media (min-width: 800px) {
      display: none;
@@ -159,10 +166,24 @@ export const CardItemTitle = styled.span<Props>`
   }
   @media (max-width: 800px) {
     justify-content: flex-start;
-    position: ${props => props.show == "none" ? 'absolute' : "static"};;
+    position: ${props => props.show == "none" ? 'absolute' : "static"};
     background-color: #fff;
     top: -52px;
     width: 120px;
     text-align: center;
+    &.header {
+      position: static;
+    }
   } ;
 `;
+export const MobileHeader = styled.div<Props>`
+  @media (min-width: 800px) {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    display: ${props => props.show == "none" ? 'flex' : "none"};
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } ;
+`
