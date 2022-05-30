@@ -25,6 +25,7 @@ import {
   TitleArea,
 } from "./styles";
 import moreIcon from "../public/more-vertical.svg";
+import { TabsDropdown } from "../components/partials/TabsDropdown";
 
 type Props = {
   agents: AgentsType[];
@@ -86,18 +87,7 @@ const Home = ({ agents, roles }: Props) => {
               </DashboardTabs>
                 {/* Tabs no celular */}
                 <MobileTabs>
-                  {agentsSelected
-                    ? 
-                    <MobileTabsSection className="form-check-label" onClick={() => handleTab('agents')}>
-                      <MobileTabsText>Colaboradores</MobileTabsText>
-                      <Image src={moreIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
-                    </MobileTabsSection>
-                    :
-                    <MobileTabsSection className="form-check-label" onClick={() => handleTab('roles')}>
-                      <MobileTabsText>Cargos</MobileTabsText>
-                      <Image src={moreIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
-                    </MobileTabsSection>
-                  }
+                    <TabsDropdown set={setTabSelected} />
                 </MobileTabs>
 
               {/* Conteúdo */}
