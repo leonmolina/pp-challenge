@@ -95,4 +95,39 @@ export const TabTitle = styled.h3<Props>`
 `
 export const DashboardContent = styled.div`
   max-width: 100vw;
+  padding: 0;
+`
+export const MobileTabs = styled.div`
+  width: 100%;
+  height: 56px;
+  background-color: #FFF;
+  border: 2px solid #CAD6D1;
+  border-radius: 8px;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media(max-width: 800px) {
+    max-width: 100vw;
+  };
+`
+export const MobileTabsSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+`
+export const MobileTabsText = styled.span`
+  font-family: var(--font);
+  font-weight: var(--medium);
+  color: var(--color-green);
+  font-size: 16px;
+  line-height: 24px;
+`
+export const TabsOptionsIcon = styled.div`
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `

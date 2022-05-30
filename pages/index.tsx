@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useState } from "react";
 import { Agents } from "../components/Agents";
 import { Header } from "../components/Header";
@@ -14,12 +15,16 @@ import {
   FillerTab,
   LeftSide,
   Main,
+  MobileTabs,
+  MobileTabsSection,
+  MobileTabsText,
   RightSide,
   Tab,
   TabTitle,
   Title,
   TitleArea,
 } from "./styles";
+import moreIcon from "../public/more-vertical.svg";
 
 type Props = {
   agents: AgentsType[];
@@ -77,7 +82,23 @@ const Home = ({ agents, roles }: Props) => {
                 {/* Barra horizontal fixa */}
                 <FillerTab />
 
+
               </DashboardTabs>
+                {/* Tabs no celular */}
+                <MobileTabs>
+                  {agentsSelected
+                    ? 
+                    <MobileTabsSection className="form-check-label" onClick={() => handleTab('agents')}>
+                      <MobileTabsText>Colaboradores</MobileTabsText>
+                      <Image src={moreIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
+                    </MobileTabsSection>
+                    :
+                    <MobileTabsSection className="form-check-label" onClick={() => handleTab('roles')}>
+                      <MobileTabsText>Cargos</MobileTabsText>
+                      <Image src={moreIcon} width={24} height={24} alt={"Ícone de flecha apontando para baixo, indicando que há opções."} />
+                    </MobileTabsSection>
+                  }
+                </MobileTabs>
 
               {/* Conteúdo */}
               <DashboardContent className="container">

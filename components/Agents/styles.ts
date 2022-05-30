@@ -23,6 +23,9 @@ export const ListTitle = styled.h3`
   color: var(--color-dark);
   font-size: 16px;
   margin: 40px 0;
+  @media(max-width: 800px) {
+    margin: 40px 0 24px 0;
+  };
 `;
 export const ListArea = styled.div`
   height: 100%;
