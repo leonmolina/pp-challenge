@@ -21,6 +21,18 @@ export const MoreOptions = styled.ul`
 `;
 export const MoreOptionsItem = styled.li`
 `;
+export const OptionsHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+`
+export const OptionsHeaderText = styled.span`
+  font-family: var(--font);
+  font-weight: var(--bold);
+  color: var(--color-dark);
+  font-size: 18px;
+`
 export const Options = styled.div`
   display: flex;
   justify-content: center;

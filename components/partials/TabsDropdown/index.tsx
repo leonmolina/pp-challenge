@@ -5,11 +5,14 @@ import {
   MoreOptions,
   MoreOptionsItem,
   Options,
+  OptionsHeader,
+  OptionsHeaderText,
   OptionsText,
   OptionsTitle,
 } from "./styles";
 import moreVertical from "../../../public/more-vertical.svg";
 import { useState } from "react";
+import closeIcon from '../../../public/x.svg'
 
 type Props = {
   set: (select: string) => void;
@@ -53,6 +56,10 @@ export const TabsDropdown = ({set}: Props) => {
         aria-labelledby="dropdownMenuButton1"
       >
         <MoreOptionsItem>
+          <OptionsHeader>
+            <OptionsHeaderText>Categorias</OptionsHeaderText>
+            <Image style={{cursor: 'pointer'}} width={24} height={24} src={closeIcon} alt="Ícone em formato de X, indicando o fechamento da página." />
+          </OptionsHeader>
           <Options
             className="dropdown-item"
             onClick={() => handleSelect('agents')}
