@@ -7,6 +7,9 @@ export const ListHeader = styled.div`
   width: 100%;
   border: 1px solid var(--color-green--light);
   border-radius: 10px 10px 0 0;
+  @media(max-width: 800px) {
+    display: none;
+  };
 `;
 export const HeaderItem = styled.div`
   height: 100%;
