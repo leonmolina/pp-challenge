@@ -16,10 +16,12 @@ import closeIcon from '../../../public/x.svg'
 
 type Props = {
   set: (select: string) => void;
+  children?: JSX.Element;
 }
 
-export const TabsDropdown = ({set}: Props) => {
-  const [tabTitle, setTabTitle] = useState('Colaboradores')
+export const TabsDropdown = ({set, children}: Props) => {
+  const [tabTitle, setTabTitle] = useState('')
+
 
   const handleSelect = (page: string) => {
     if(page === 'agents') {
@@ -38,7 +40,9 @@ export const TabsDropdown = ({set}: Props) => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <OptionsTitle>{tabTitle}</OptionsTitle>
+        <OptionsTitle>
+          {children}
+        </OptionsTitle>
         {/* Três pontos verticais */}
         <Image
           src={moreVertical}

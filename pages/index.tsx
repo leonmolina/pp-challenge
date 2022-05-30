@@ -87,7 +87,13 @@ const Home = ({ agents, roles }: Props) => {
               </DashboardTabs>
                 {/* Tabs no celular */}
                 <MobileTabs>
-                    <TabsDropdown set={setTabSelected} />
+                    <TabsDropdown set={setTabSelected}>
+                    {tabSelected === "agents" ? (
+                      <span>Colaboradores</span>
+                    ) : (
+                      <span>Cargos</span>
+                    )}
+                    </TabsDropdown>
                 </MobileTabs>
 
               {/* Conteúdo */}
