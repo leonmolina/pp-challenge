@@ -13,10 +13,11 @@ import trashIcon from "../../../public/trash.svg";
 import moreVertical from "../../../public/more-vertical.svg";
 
 type Props = {
-  children: JSX.Element;
+  children?: JSX.Element;
+  icon?: boolean;
 };
 
-export const OptionsDropdown = ({ children }: Props) => {
+export const OptionsDropdown = ({ children, icon }: Props) => {
   return (
     <Container className="dropdown">
       <AgentOptions
@@ -27,14 +28,18 @@ export const OptionsDropdown = ({ children }: Props) => {
       >
         {children}
 
-        {/* Três pontos verticais */}
-
-        {/* <Image
-          src={moreVertical}
-          alt="Botão de mais opções"
-          width={24}
-          height={24}
-        /> */}
+        {icon &&
+          // Três pontos verticais
+          <div className="icon" style={{width: 24, height: 24}}>
+            <Image
+              src={moreVertical}
+              alt="Botão de mais opções"
+              width={24}
+              height={24}
+            />
+          </div>
+        
+        }
         
       </AgentOptions>
 

@@ -9,14 +9,20 @@ import {
   AgentStatus,
   CardItemTitle,
   Container,
+  FooterMobileText,
   MainAreaLeftSide,
   MainAreaRightSide,
+  MainContent,
+  MainHeader,
+  OptionsMobile,
+  OptionsWeb,
 } from "./styles";
 import { AgentsType } from "../../types/Agents";
 import { OptionsDropdown } from "../partials/OptionsDropdown";
 import Image from "next/image";
-import arrowDown from '../../public/chevron-down.svg';
-import arrowUp from '../../public/up.svg'
+import arrowDown from "../../public/chevron-down.svg";
+import arrowUp from "../../public/up.svg";
+import pageIcon from "../../public/file-plus.svg";
 import { useState } from "react";
 
 type Props = {
@@ -25,66 +31,75 @@ type Props = {
 
 export const AgentCard = ({ agents }: Props) => {
   const [arrow, setArrow] = useState(arrowDown);
-  const [show, setShow] = useState("none")
+  const [show, setShow] = useState("none");
 
   const handleCardOpen = () => {
-
     if (arrow === arrowUp) {
-      setArrow(arrowDown)
+      setArrow(arrowDown);
     } else {
-      setArrow(arrowUp)
+      setArrow(arrowUp);
     }
 
     if (show === "block") {
-      setShow("none")
+      setShow("none");
     } else {
-      setShow("block")
+      setShow("block");
     }
-  }
+  };
 
   return (
     <Container show={show}>
       <AgentItems className="row">
         <AgentMainArea className="col-3">
-          <MainAreaLeftSide>
-          <CardItemTitle className="main">Nome completo</CardItemTitle>
-            <AgentAvatar src={agents.image} />
-          </MainAreaLeftSide>
-          <MainAreaRightSide>
-            <AgentItemText className="mainName">{agents.name}</AgentItemText>
+          
+          <MainHeader>
+            <CardItemTitle show={show} className="main">Nome completo</CardItemTitle>
+          </MainHeader>
 
-            {/* Área do botão de expandir que aparece no Mobile */}
-            <AgentExpandButton
-              onClick={handleCardOpen}
-              style={{cursor: 'pointer'}}
-            >
-              <Image src={arrow} alt="Ícone de flecha, simbolizando a abertura e fechamento de menu expansível" />
-            </AgentExpandButton>
+          <MainContent>
+            <MainAreaLeftSide>
+              <AgentAvatar src={agents.image} />
+              <AgentItemText className="mainName">{agents.name}</AgentItemText>
+            </MainAreaLeftSide>
 
-          </MainAreaRightSide>
+            <MainAreaRightSide>
+              {/* Área do botão de expandir que aparece no Mobile */}
+              <AgentExpandButton
+                onClick={handleCardOpen}
+                style={{ cursor: "pointer" }}
+              >
+                <Image
+                  src={arrow}
+                  width={24}
+                  height={24}
+                  alt="Ícone de flecha, simbolizando a abertura e fechamento de menu expansível"
+                />
+              </AgentExpandButton>
+            </MainAreaRightSide>
+          </MainContent>
         </AgentMainArea>
 
         {/* Departamento */}
         <AgentItemArea show={show} className="col-2">
-          <CardItemTitle>Departamento</CardItemTitle>
+          <CardItemTitle show={show}>Departamento</CardItemTitle>
           <AgentItemText>{agents.department}</AgentItemText>
         </AgentItemArea>
 
         {/* Cargo */}
         <AgentItemArea show={show} className="col-2">
-          <CardItemTitle>Cargo</CardItemTitle>
+          <CardItemTitle show={show}>Cargo</CardItemTitle>
           <AgentItemText>{agents.role}</AgentItemText>
         </AgentItemArea>
 
         {/* Unidade */}
         <AgentItemArea show={show} className="col-2">
-          <CardItemTitle>Unidade</CardItemTitle>
+          <CardItemTitle show={show}>Unidade</CardItemTitle>
           <AgentItemText>{agents.branch}</AgentItemText>
         </AgentItemArea>
 
         {/* Status */}
         <AgentItemArea show={show} className="col-2">
-          <CardItemTitle>Status</CardItemTitle>
+          <CardItemTitle show={show}>Status</CardItemTitle>
           <AgentStatus>
             <Status status={agents.status} />
           </AgentStatus>
@@ -92,7 +107,28 @@ export const AgentCard = ({ agents }: Props) => {
 
         {/* Opções */}
         <AgentItemArea show={show} className="more col-1">
-          <OptionsDropdown />
+
+          {/* Web */}
+          <OptionsWeb>
+          <OptionsDropdown icon />
+          </OptionsWeb>
+
+          {/* Mobile */}
+          <OptionsMobile>
+            <OptionsDropdown>
+              <>
+                <Image
+                  src={pageIcon}
+                  width={24}
+                  height={24}
+                  alt="Ícone de 2 setas apontando em circulo, indicando a opção de carregar mais colaboradores."
+                />
+                <FooterMobileText>Ações</FooterMobileText>
+              </>
+            </OptionsDropdown>
+          </OptionsMobile>
+
+
         </AgentItemArea>
       </AgentItems>
     </Container>

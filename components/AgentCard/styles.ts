@@ -13,12 +13,14 @@ export const Container = styled.div<Props>`
   flex-direction: column;
   border-bottom: 1px solid #eaefed;
   @media (max-width: 800px) {
-    height: ${props => props.show == "none" ? '120px' : "400px"};
-    padding: 24px 16px;
+    height: ${props => props.show == "none" ? '90px' : "400px"};
     flex-wrap: wrap;
-    border: 2px solid #b5f1dd;
+    border: 2px solid ${props => props.show == "none" ? 'var(--color-grey)' : "var(--color-blue)"};;
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding:  ${props => props.show == "none" ? '16px 16px' : "16px 24px"};
+
   }
 `;
 export const AgentItems = styled.div`
@@ -42,19 +44,44 @@ export const AgentMainArea = styled.div`
   padding: 0;
   @media (max-width: 800px) {
     width: 100%;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    padding-bottom: 16px;
-    height: 100px;
   } ;
 `;
-export const MainAreaLeftSide = styled.div`
-  width: 30%;
+export const MainHeader = styled.div`
+  @media (min-width: 800px) {
+    display: none;
+  } ;
+
+  @media (max-width: 800px) {
+    position: relative;
+  } ;
+`
+export const MainContent = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 800px) {
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  };
+
+`
+export const MainAreaLeftSide = styled.div`
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @media (min-width: 800px) {
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+  } ;
   @media (max-width: 800px) {
     justify-content: flex-start;
     width: auto;
@@ -62,14 +89,12 @@ export const MainAreaLeftSide = styled.div`
   } ;
 `;
 export const MainAreaRightSide = styled.div`
-  width: 70%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   @media (max-width: 800px) {
     justify-content: space-between;
-    width: 260px;
   } ;
 `;
 export const AgentExpandButton = styled.div`
@@ -78,7 +103,7 @@ export const AgentExpandButton = styled.div`
   } ;
 `;
 
-export const CardItemTitle = styled.span`
+export const CardItemTitle = styled.span<Props>`
   font-size: 12px;
   font-family: var(--font);
   font-weight: var(--bold);
@@ -88,8 +113,9 @@ export const CardItemTitle = styled.span`
   }
   @media (max-width: 800px) {
     justify-content: flex-start;
-    position: absolute;
-    top: 0px;
+    position: ${props => props.show == "none" ? 'absolute' : "static"};;
+    background-color: #fff;
+    top: -52px;
     width: 120px;
     text-align: center;
   } ;
@@ -97,6 +123,7 @@ export const CardItemTitle = styled.span`
 
 export const AgentItemArea = styled.div<Props>`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   &.more {
@@ -139,3 +166,21 @@ export const OptionsLink = styled.a`
     color: inherit;
   }
 `;
+export const FooterMobileText = styled.span`
+  font-family: (--font);
+  font-weight: var(--bold);
+  color: var(--color-dark);
+  font-size: 16px;
+  padding-left: 8px;
+`
+export const OptionsWeb = styled.div`
+@media (max-width: 800px) {
+      display: none;
+    } ;
+`
+export const OptionsMobile = styled.div`
+
+  @media (min-width: 800px) {
+      display: none;
+    } ;
+`

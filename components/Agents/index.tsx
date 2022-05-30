@@ -55,11 +55,12 @@ export const Agents = ({ agents }: Props) => {
         <FooterMobile>
           <OptionsDropdown>
             <>
-                <Image src={loadIcon} width={24} height={24}alt="Ícone de 2 setas apontando em circulo, indicando a opção de carregar mais colaboradores." />
+                <Image src={loadIcon} width={24} height={24} alt="Ícone de 2 setas apontando em circulo, indicando a opção de carregar mais colaboradores." />
                 <FooterMobileText>Carregar mais</FooterMobileText>
             </>
           </OptionsDropdown>
         </FooterMobile>
+
       </ListArea>
     </Container>
   );

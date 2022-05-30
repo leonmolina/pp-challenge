@@ -24,6 +24,7 @@ export const AgentsFooter = () => {
             {/* Select do footer */}
             <FooterWeb className="dropdown">
               <FooterSelect
+                style={{height: 36}}
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton1"
@@ -54,7 +55,7 @@ export const AgentsFooter = () => {
               </DropdownMenu>
             </FooterWeb>
           </ListFooterLeftSide>
-          {/* <ListFooterRightSide>
+          <ListFooterRightSide>
 
             <FooterNavButton value="prev" className="left">
               <Image
@@ -76,7 +77,7 @@ export const AgentsFooter = () => {
               />
             </FooterNavButton>
 
-          </ListFooterRightSide> */}
+          </ListFooterRightSide>
 
         </ListFooter>
     </Container>
