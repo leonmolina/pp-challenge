@@ -114,7 +114,7 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
                 <OptionsText isDisabled>Duplicar</OptionsText>
               </Options>
 
-              {/* Exluir */}
+              {/* Excluir */}
               <Options isDisabled className="dropdown-item">
                 <OptionsIcon>
                   <Image
