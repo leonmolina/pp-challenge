@@ -42,6 +42,7 @@ export const AgentMainArea = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0;
+  padding-left: 16px;
   @media (max-width: 800px) {
     width: 100%;
     justify-content: space-between;
