@@ -10,6 +10,9 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media(max-width: 800px) {
+    max-width: 100vw;
+  };
 `;
 
 export const AgentHeader = styled.div`
@@ -63,6 +66,9 @@ export const InfoCardsArea = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 24px;
+  @media(max-width: 800px) {
+    flex-direction: column;
+  };
 `
 export const AgentInfoCard = styled.div`
   border: 1px solid #000;
@@ -75,6 +81,10 @@ export const AgentInfoCard = styled.div`
   border: 2px solid #CAD6D1;
   border-radius: 8px;
   padding: 16px;
+  @media(max-width: 800px) {
+    width: 100%;
+    margin-bottom: 8px;
+  };
 `
 export const InfoIcon = styled.div`
   display: flex;
@@ -122,6 +132,9 @@ export const OrgCardsArea = styled.div`
   flex-wrap: wrap;
   margin-top: 24px;
   gap: 24px;
+  @media(max-width: 800px) {
+    justify-content: center;
+  };
 `
 export const AgentOrgCard = styled.div`
   width: 380px;

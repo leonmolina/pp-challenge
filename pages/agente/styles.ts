@@ -57,4 +57,5 @@ export const AgentDashboard = styled.div`
   flex-direction: column;
 `
 export const DashboardContent = styled.div`
+  width: auto;
 `
