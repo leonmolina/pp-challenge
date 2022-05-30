@@ -1,7 +1,9 @@
 import {
+  AgentExpandButton,
   AgentItemArea,
   AgentItems,
   AgentItemText,
+  CardItemTitle,
   Container,
   FooterMobileText,
   OptionsMobile,
@@ -39,20 +41,42 @@ export const RoleCard = ({ roles, index }: Props) => {
   };
 
   return (
-    <Container>
-      <AgentItems className="row">
+    <Container show={show}>
+      <AgentItems show={show} className="row">
         {/* Cargo */}
-        <AgentItemArea className="col-2">
+        <AgentItemArea show={show} className="col-2">
+          <CardItemTitle show={show}>Cargo</CardItemTitle>
           <AgentItemText>{roles.name}</AgentItemText>
         </AgentItemArea>
 
         {/* Departamento */}
-        <AgentItemArea className="col-2">
+        <AgentItemArea show={show} className="col-2">
+          <CardItemTitle show={show}>Departamento</CardItemTitle>
           <AgentItemText>{roles.departament}</AgentItemText>
         </AgentItemArea>
 
+
+
+        <AgentItemArea className="mobile col-2">
+          <AgentExpandButton
+            onClick={handleCardOpen}
+            style={{ cursor: "pointer" }}
+          >
+            <Image
+              src={arrow}
+              width={24}
+              height={24}
+              alt="Ícone de flecha, simbolizando a abertura e fechamento de menu expansível"
+            />
+          </AgentExpandButton>
+        </AgentItemArea>
+
+
+
+
         {/* Colaboradores */}
-        <AgentItemArea className="col-2">
+        <AgentItemArea show={show} className="col-2">
+          <CardItemTitle show={show}>Colaboradores</CardItemTitle>
           <AgentItemText>{roles.agents_quantity}</AgentItemText>
         </AgentItemArea>
 
@@ -60,14 +84,15 @@ export const RoleCard = ({ roles, index }: Props) => {
         <AgentItemArea className="more col-6">
 
 
-                    {/* Web */}
+        {/* Web */}
           <OptionsWeb>
+            
             <OptionsDropdown icon role />
           </OptionsWeb>
 
           {/* Mobile */}
           <OptionsMobile>
-            <OptionsDropdown>
+            <OptionsDropdown role>
               <>
                 <Image
                   src={pageIcon}

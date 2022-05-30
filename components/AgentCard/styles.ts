@@ -113,11 +113,14 @@ export const CardItemTitle = styled.span<Props>`
   }
   @media (max-width: 800px) {
     justify-content: flex-start;
-    position: ${props => props.show == "none" ? 'absolute' : "static"};;
+    position: ${props => props.show == "none" ? 'absolute' : "static"};
     background-color: #fff;
-    top: -52px;
+    top: ${props => props.show == "none" ? '-52px' : "-66px"};
     width: 120px;
     text-align: center;
+    &.main{
+      position: absolute;
+    }
   } ;
 `;
 

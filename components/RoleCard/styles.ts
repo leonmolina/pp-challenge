@@ -24,10 +24,15 @@ export const Container = styled.div<Props>`
 
   }
 `;
-export const AgentItems = styled.div`
+export const AgentItems = styled.div<Props>`
   width: 100%;
   height: 100%;
   display: flex;
+  @media (max-width: 800px) {
+    justify-content: ${props => props.show == "none" ? 'flex-end' : "space-between"};
+;
+    position: relative;
+  } ;
 `;
 export const AgentAvatar = styled.img`
   width: 32px;
@@ -35,14 +40,38 @@ export const AgentAvatar = styled.img`
   border-radius: 16px;
   margin-right: 5px;
 `;
-export const AgentItemArea = styled.div`
+export const AgentItemArea = styled.div<Props>`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   &.more {
-    justify-content: flex-end;
+    justify-content: center;
   }
+  @media (max-width: 800px) {
+    width: 33%;
+    position: relative;
+    justify-content: center;
+    display: ${props => props.show == "none" ? "none" : "flex"};
+    
+    &.more {
+      width: 100vw;
+      justify-content: center;
+      border: 2px solid #b5f1dd;
+      border-radius: 8px;
+      height: 52px;
+      padding: 14px 24px 14px 24px;
+      align-self: flex-end;
+    };
+  };
+  &.mobile {
+   @media (max-width: 800px) {
+     display: block;
+   } ;
+   @media (min-width: 800px) {
+     display: none;
+   } ;
+ }
 `;
 export const AgentItemText = styled.span`
   font-family: var(--font);
@@ -93,6 +122,7 @@ export const OptionsText = styled.div`
   width: 80%;
 `
 export const OptionsWeb = styled.div`
+
 @media (max-width: 800px) {
       display: none;
     } ;
@@ -110,3 +140,29 @@ export const FooterMobileText = styled.span`
   font-size: 16px;
   padding-left: 8px;
 `
+export const AgentExpandButton = styled.div`
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+  @media (min-width: 800px) {
+    display: none;
+  } ;
+`;
+export const CardItemTitle = styled.span<Props>`
+  font-size: 12px;
+  font-family: var(--font);
+  font-weight: var(--bold);
+  color: var(--color-green);
+  @media (min-width: 800px) {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    justify-content: flex-start;
+    position: ${props => props.show == "none" ? 'absolute' : "static"};;
+    background-color: #fff;
+    top: -52px;
+    width: 120px;
+    text-align: center;
+  } ;
+`;
