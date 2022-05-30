@@ -3,15 +3,26 @@ import styled from "@emotion/styled";
 
 type Props = {
   isDisabled?: boolean;
+  show?: string;
 }
 
-export const Container = styled.div`
+export const Container = styled.div<Props>`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 70px;
   width: 100%;
   border-bottom: 1px solid #EAEFED;
+  @media (max-width: 800px) {
+    height: ${props => props.show == "none" ? '90px' : "400px"};
+    flex-wrap: wrap;
+    border: 2px solid ${props => props.show == "none" ? 'var(--color-grey)' : "var(--color-blue)"};;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding:  ${props => props.show == "none" ? '16px 16px' : "16px 24px"};
+
+  }
 `;
 export const AgentItems = styled.div`
   width: 100%;
@@ -80,4 +91,22 @@ export const OptionsIcon = styled.div`
 `
 export const OptionsText = styled.div`
   width: 80%;
+`
+export const OptionsWeb = styled.div`
+@media (max-width: 800px) {
+      display: none;
+    } ;
+`
+export const OptionsMobile = styled.div`
+
+  @media (min-width: 800px) {
+      display: none;
+    } ;
+`
+export const FooterMobileText = styled.span`
+  font-family: (--font);
+  font-weight: var(--bold);
+  color: var(--color-dark);
+  font-size: 16px;
+  padding-left: 8px;
 `

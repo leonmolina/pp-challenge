@@ -2,20 +2,18 @@ import {
   AgentItemArea,
   AgentItems,
   AgentItemText,
-  AgentOptions,
   Container,
-  MoreOptions,
-  MoreOptionsItem,
-  Options,
-  OptionsDropdown,
-  OptionsIcon,
-  OptionsText,
+  FooterMobileText,
+  OptionsMobile,
+  OptionsWeb,
 } from "./styles";
-import moreVertical from "../../public/more-vertical.svg";
 import Image from "next/image";
 import { RolesType } from "../../types/Roles";
-import eyeIcon from '../../public/eye.svg';
-import trashIcon from '../../public/trash.svg';
+import { useState } from "react";
+import arrowDown from "../../public/chevron-down.svg";
+import arrowUp from "../../public/up.svg";
+import { OptionsDropdown } from "../partials/OptionsDropdown";
+import pageIcon from "../../public/file-plus.svg";
 
 type Props = {
   roles: RolesType;
@@ -23,6 +21,23 @@ type Props = {
 };
 
 export const RoleCard = ({ roles, index }: Props) => {
+  const [arrow, setArrow] = useState(arrowDown);
+  const [show, setShow] = useState("none");
+
+  const handleCardOpen = () => {
+    if (arrow === arrowUp) {
+      setArrow(arrowDown);
+    } else {
+      setArrow(arrowUp);
+    }
+
+    if (show === "block") {
+      setShow("none");
+    } else {
+      setShow("block");
+    }
+  };
+
   return (
     <Container>
       <AgentItems className="row">
@@ -43,44 +58,28 @@ export const RoleCard = ({ roles, index }: Props) => {
 
         {/* Opções */}
         <AgentItemArea className="more col-6">
-          <OptionsDropdown className="dropdown">
-            <AgentOptions
-              className="btn btn-sm"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              {/* Três pontos verticais */}
-              <Image
-                src={moreVertical}
-                alt="Botão de mais opções"
-                width={24}
-                height={24}
-              />
-            </AgentOptions>
-            {/* Dropdown items */}
-            <MoreOptions
-              className="dropdown-menu"
-              aria-labelledby="dropdownMenuButton1"
-            >
-              <MoreOptionsItem>
-                <Options className="dropdown-item" href={`/cargo/${index}`}>
-                  <OptionsIcon>
-                    <Image src={eyeIcon} width={24} height={24} alt="Ícone de um olho, para ver a página do colaborador." />
-                  </OptionsIcon>
-                  <OptionsText>Ver cargo</OptionsText>
-                </Options>
-              </MoreOptionsItem>
-              <MoreOptionsItem>
-                <Options isDisabled className="dropdown-item">
-                  <OptionsIcon>
-                  <Image src={trashIcon} width={24} height={24} alt="ícone de um lixeiro, para excluir o colaborador."/>
-                  </OptionsIcon>
-                  <OptionsText>Excluir</OptionsText>
-                </Options>
-              </MoreOptionsItem>
-            </MoreOptions>
-          </OptionsDropdown>
+
+
+                    {/* Web */}
+          <OptionsWeb>
+            <OptionsDropdown icon role />
+          </OptionsWeb>
+
+          {/* Mobile */}
+          <OptionsMobile>
+            <OptionsDropdown>
+              <>
+                <Image
+                  src={pageIcon}
+                  width={24}
+                  height={24}
+                  alt="Ícone de 2 setas apontando em circulo, indicando a opção de carregar mais colaboradores."
+                />
+                <FooterMobileText>Ações</FooterMobileText>
+              </>
+            </OptionsDropdown>
+          </OptionsMobile>
+
         </AgentItemArea>
       </AgentItems>
     </Container>

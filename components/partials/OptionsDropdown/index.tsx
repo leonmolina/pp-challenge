@@ -15,9 +15,10 @@ import moreVertical from "../../../public/more-vertical.svg";
 type Props = {
   children?: JSX.Element;
   icon?: boolean;
+  role?: boolean;
 };
 
-export const OptionsDropdown = ({ children, icon }: Props) => {
+export const OptionsDropdown = ({ children, icon, role }: Props) => {
   return (
     <Container className="dropdown">
       <AgentOptions
@@ -59,7 +60,10 @@ export const OptionsDropdown = ({ children, icon }: Props) => {
               />
             </OptionsIcon>
 
-            <OptionsText>Ver colaborador</OptionsText>
+            <OptionsText>
+              {role ? 'Ver cargo' : 'Ver colaborador'
+              }
+              </OptionsText>
           </Options>
         </MoreOptionsItem>
         <MoreOptionsItem>
