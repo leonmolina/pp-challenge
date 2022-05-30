@@ -45,7 +45,7 @@ export const RoleCard = ({ roles, index }: Props) => {
     <Container show={show}>
       <AgentItems show={show} className="row">
         {/* Cargo */}
-        <AgentItemArea show={show} className="col-2">
+        <AgentItemArea show={show} className="name col-2">
           <CardItemTitle show={show}>Cargo</CardItemTitle>
           <AgentItemText>{roles.name}</AgentItemText>
         </AgentItemArea>

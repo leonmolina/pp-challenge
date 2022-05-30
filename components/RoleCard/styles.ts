@@ -50,6 +50,9 @@ export const AgentItemArea = styled.div<Props>`
   &.more {
     justify-content: center;
   }
+  &.name{
+    align-items: flex-start;
+  }
   @media (max-width: 800px) {
     width: ${props => props.show == "none" ? "33%" : "37.5%"};
     position: relative;

@@ -52,15 +52,6 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
         aria-labelledby="dropdownMenuButton1"
       >
         <MoreOptionsItem>
-          {role ? (
-            // Cargo
-
-            <div></div>
-          ) : (
-            // Colaborador
-            <div></div>
-          )}
-
           {path ? (
             <Options className="dropdown-item" href={path}>
               <OptionsIcon>
