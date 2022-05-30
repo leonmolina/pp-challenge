@@ -16,15 +16,12 @@ import {
   LeftSide,
   Main,
   MobileTabs,
-  MobileTabsSection,
-  MobileTabsText,
   RightSide,
   Tab,
   TabTitle,
   Title,
   TitleArea,
 } from "./styles";
-import moreIcon from "../public/more-vertical.svg";
 import { TabsDropdown } from "../components/partials/TabsDropdown";
 
 type Props = {

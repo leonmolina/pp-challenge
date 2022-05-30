@@ -21,11 +21,13 @@ export const AgentHeader = styled.div`
   width: 100%;
   justify-content: flex-start;
   align-items: center;
+  @media(max-width: 800px) {
+    justify-content: center;
+  };
 `
 export const AgentAvatar = styled.div`
   height: 80px;
   width: 80px;
-  background-color: #f00;
   border-radius: 40px;
 
   display: flex;
@@ -146,6 +148,9 @@ export const AgentOrgCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media(max-width: 800px) {
+    width: 100%;
+  };
 `
 export const AgentCardSection = styled.div`
   display: flex;

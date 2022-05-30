@@ -10,6 +10,9 @@ export const LeftSide = styled.div`
   background-color: #FFF;
   box-shadow: 0px 4px 8px 0px rgba(165, 171, 179, 0.16);
   border: 1px solid #EAEFED;
+  @media(max-width: 800px) {
+    display: none;
+  };
 `
 export const RightSide = styled.div`
   height: auto;
@@ -17,6 +20,9 @@ export const RightSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media(max-width: 800px) {
+    max-width: 100%;
+  };
 `
 export const TitleArea = styled.div`
   width: 100%;
@@ -24,6 +30,9 @@ export const TitleArea = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 0 0 24px 0;
+  @media(max-width: 800px) {
+    margin: 0 0 24px 16px;
+  };
 `
 export const TitleBackButton = styled.a`
   width: 32px;
@@ -31,7 +40,7 @@ export const TitleBackButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: var(--color-grey);
   margin-right: 16px;
   cursor: pointer;
@@ -46,9 +55,13 @@ export const Title = styled.h2`
 export const ContentArea = styled.div`
   width: 956px;
   margin: 56px 0 80px 0;
+  @media(max-width: 800px) {
+    max-width: 100vw;
+  };
 `
 export const AgentDashboard = styled.div`
   background-color: #fff;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   padding: 40px 24px 40px 24px;
