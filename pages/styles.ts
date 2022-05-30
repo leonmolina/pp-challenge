@@ -107,6 +107,9 @@ export const MobileTabs = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media(min-width: 800px) {
+    display: none;
+  };
   @media(max-width: 800px) {
     max-width: 100vw;
   };
