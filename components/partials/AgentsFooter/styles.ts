@@ -5,6 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+export const FooterWeb = styled.div`
+`
 export const ListFooter = styled.div`
   display: flex;
   height: 50px;

@@ -8,11 +8,15 @@ import {
   OptionsIcon,
   OptionsText,
 } from "./styles";
-import eyeIcon from '../../../public/eye.svg';
-import trashIcon from '../../../public/trash.svg';
+import eyeIcon from "../../../public/eye.svg";
+import trashIcon from "../../../public/trash.svg";
 import moreVertical from "../../../public/more-vertical.svg";
 
-export const OptionsDropdown = () => {
+type Props = {
+  children: JSX.Element;
+};
+
+export const OptionsDropdown = ({ children }: Props) => {
   return (
     <Container className="dropdown">
       <AgentOptions
@@ -21,13 +25,17 @@ export const OptionsDropdown = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
+        {children}
+
         {/* Três pontos verticais */}
-        <Image
+
+        {/* <Image
           src={moreVertical}
           alt="Botão de mais opções"
           width={24}
           height={24}
-        />
+        /> */}
+        
       </AgentOptions>
 
       {/* Dropdown items */}
@@ -36,10 +44,7 @@ export const OptionsDropdown = () => {
         aria-labelledby="dropdownMenuButton1"
       >
         <MoreOptionsItem>
-          <Options
-            className="dropdown-item"
-            href={'#'}
-          >
+          <Options className="dropdown-item" href={"#"}>
             <OptionsIcon>
               <Image
                 src={eyeIcon}

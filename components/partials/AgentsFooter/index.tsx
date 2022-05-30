@@ -6,6 +6,7 @@ import {
   FooterNavText,
   FooterSelect,
   FooterText,
+  FooterWeb,
   ListFooter,
   ListFooterLeftSide,
   ListFooterRightSide,
@@ -21,7 +22,7 @@ export const AgentsFooter = () => {
           <ListFooterLeftSide>
             <FooterText>Mostrando 10 de 50 registros</FooterText>
             {/* Select do footer */}
-            <div className="dropdown">
+            <FooterWeb className="dropdown">
               <FooterSelect
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
@@ -51,9 +52,9 @@ export const AgentsFooter = () => {
                   </a>
                 </DropdownItem>
               </DropdownMenu>
-            </div>
+            </FooterWeb>
           </ListFooterLeftSide>
-          <ListFooterRightSide>
+          {/* <ListFooterRightSide>
 
             <FooterNavButton value="prev" className="left">
               <Image
@@ -75,7 +76,7 @@ export const AgentsFooter = () => {
               />
             </FooterNavButton>
 
-          </ListFooterRightSide>
+          </ListFooterRightSide> */}
 
         </ListFooter>
     </Container>

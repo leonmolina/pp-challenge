@@ -66,3 +66,27 @@ export const CardLink = styled.a`
     color: inherit;
   }
 `
+export const FooterWeb = styled.div`
+  @media (max-width: 800px) {
+    display: none;
+  } ;
+`
+export const FooterMobile = styled.div`
+  display: flex;
+  margin: 24px 0 0 0;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-blue);
+  border-radius: 8px;
+  height: 52px;
+  @media (min-width: 800px) {
+    display: none;
+  } ;
+`
+export const FooterMobileText = styled.span`
+  font-family: (--font);
+  font-weight: var(--bold);
+  color: var(--color-dark);
+  font-size: 16px;
+  padding-left: 8px;
+`
