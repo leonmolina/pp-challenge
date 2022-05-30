@@ -2,6 +2,9 @@
 Projeto realizado como primeira etapa no processo seletivo para a vaga de Desenvolvedor Front-end na Pedido Pago.
 
 ### Relato
-Esse projeto foi um grande desafio, principalmente pela questão do tempo (que está bem limitado devido ao estágio e faculdade) e da stack.
-Apesar de ter estudado React.js nos últimos 6 meses, há várias mudanças no Next.
+Esse projeto foi um grande desafio, principalmente pela questão do tempo (que está bem limitado devido ao estágio e faculdade) e da stack. Apesar de ter estudado React.js nos últimos 6 meses, há várias mudanças no Next.
+
 Sei que com mais tempo iria cuidar mais da qualidade do código, mas acredito que esteja de acordo com o pedido, apesar da performance não estar das melhores, o que acredito que seria melhorado com rotas mais bem definidas.
+
+As únicas funcionalidades que faltaram, por questão de falta de tempo no período estipulado, foram: Paginação e pesquisa.
+Porém já fiz ambas em outro projeto bem parecido em React.js, então acredito que não seria complicado implementar.
