@@ -90,7 +90,6 @@ export const RoleCard = ({ roles, index }: Props) => {
 
         {/* Web */}
           <OptionsWeb>
-            
             <OptionsDropdown icon role />
           </OptionsWeb>
 

@@ -130,6 +130,9 @@ export const OptionsText = styled.div`
   width: 80%;
 `
 export const OptionsWeb = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 
 @media (max-width: 800px) {
       display: none;

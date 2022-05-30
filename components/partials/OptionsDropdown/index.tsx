@@ -104,7 +104,7 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
                     src={editIcon}
                     width={24}
                     height={24}
-                    alt="ícone de um lixeiro, para excluir o colaborador."
+                    alt="ícone de uma nota e caneta, indicando a possibilidade de editar o item."
                   />
                 </OptionsIcon>
                 <OptionsText isDisabled>Editar</OptionsText>
@@ -117,7 +117,7 @@ export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
                     src={duplicateIcon}
                     width={24}
                     height={24}
-                    alt="ícone de um lixeiro, para excluir o colaborador."
+                    alt="ícone de um item duplicado, indicando a possibilidade de duplicar."
                   />
                 </OptionsIcon>
                 <OptionsText isDisabled>Duplicar</OptionsText>
