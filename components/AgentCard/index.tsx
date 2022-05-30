@@ -115,7 +115,7 @@ export const AgentCard = ({ agents }: Props) => {
 
           {/* Mobile */}
           <OptionsMobile>
-            <OptionsDropdown>
+            <OptionsDropdown path={`/agente/${agents.agent_id}`}>
               <>
                 <Image
                   src={pageIcon}

@@ -16,9 +16,10 @@ type Props = {
   children?: JSX.Element;
   icon?: boolean;
   role?: boolean;
+  path?: string;
 };
 
-export const OptionsDropdown = ({ children, icon, role }: Props) => {
+export const OptionsDropdown = ({ children, icon, role, path }: Props) => {
   return (
     <Container className="dropdown">
       <AgentOptions
@@ -50,21 +51,42 @@ export const OptionsDropdown = ({ children, icon, role }: Props) => {
         aria-labelledby="dropdownMenuButton1"
       >
         <MoreOptionsItem>
-          <Options className="dropdown-item" href={"#"}>
-            <OptionsIcon>
-              <Image
-                src={eyeIcon}
-                width={24}
-                height={24}
-                alt="Ícone de um olho, para ver a página do colaborador."
-              />
-            </OptionsIcon>
 
-            <OptionsText>
-              {role ? 'Ver cargo' : 'Ver colaborador'
-              }
-              </OptionsText>
-          </Options>
+          {path ?
+            <Options className="dropdown-item" href={path}>
+              <OptionsIcon>
+                <Image
+                  src={eyeIcon}
+                  width={24}
+                  height={24}
+                  alt="Ícone de um olho, para ver a página do colaborador."
+                />
+              </OptionsIcon>
+
+              <OptionsText>
+                {role ? 'Ver cargo' : 'Ver colaborador'
+                }
+                </OptionsText>
+            </Options>
+              :
+              <Options className="dropdown-item" href={'#'}>
+              <OptionsIcon>
+                <Image
+                  src={eyeIcon}
+                  width={24}
+                  height={24}
+                  alt="Ícone de um olho, para ver a página do colaborador."
+                />
+              </OptionsIcon>
+
+              <OptionsText>
+                {role ? 'Ver cargo' : 'Ver colaborador'
+                }
+                </OptionsText>
+            </Options>
+          }
+
+
         </MoreOptionsItem>
         <MoreOptionsItem>
           <Options isDisabled className="dropdown-item">
